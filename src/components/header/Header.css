@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Gloock&family=Inter:wght@300&family=Kanit:wght@100;300;400&family=Montserrat:wght@300;400;600;700;800&family=Oswald&family=Poppins:wght@400;500;600;700&family=Roboto+Condensed&family=Roboto:ital,wght@0,400;1,100;1,300&display=swap");
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+input {
+  min-width: 803px;
+  height: 42px;
+  background-image: url("../../imgs/search\ 1.png");
+  caret-color: wheat;
+  text-indent: 50px;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 40px;
+  background-repeat: no-repeat;
+  padding: 25px;
+  background-position: 25px 7px;
+  background-size: 40px 40px;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+}
+input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.FindLocation {
+  position: relative;
+}
+.container {
+  min-width: 1440px;
+  margin: 0 auto;
+}
+.header_box {
+  display: flex;
+  padding-top: 50px;
+  align-items: center;
+  justify-content: space-around;
+}
+button {
+  width: 200px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 40px;
+  background: #4cbb17;
+
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+}
+.geoposition {
+  margin-left: 5px;
+}
+.lupa {
+  position: absolute;
+  width: 30px;
+  height: 36px;
+  flex-shrink: 0;
+  left: 10%;
+  top: 7%;
+}
+button > p {
+  color: white;
+  text-align: center;
+  font-family: Poppins;
+  font-style: normal;
+  margin-right: 10px;
+  font-weight: 600;
+  line-height: normal;
+}
