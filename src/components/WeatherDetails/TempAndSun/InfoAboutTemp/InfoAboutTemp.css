@@ -1,0 +1,31 @@
+.InfoAboutTemp {
+  padding-bottom: 10px;
+}
+.Temp {
+  flex-shrink: 0;
+  font-family: Poppins;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 5px;
+  background: linear-gradient(
+    84deg,
+    #fff -16.56%,
+    rgba(255, 255, 255, 0) 118.43%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.FeelsLike {
+  flex-shrink: 0;
+  text-align: start;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: Poppins;
+  font-size: 25px;
+  margin-left: 5px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

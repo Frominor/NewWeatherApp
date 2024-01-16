@@ -1,0 +1,68 @@
+.HumidAndPressure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+.Humid {
+  padding-top: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Pressure {
+  padding-bottom: 17.05px;
+}
+.procent {
+  padding-top: 10px;
+  width: 110.321px;
+  margin: 0px;
+  padding-bottom: 10px;
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.humidityP {
+  flex-shrink: 0;
+  color: #fff;
+  text-align: center;
+  margin: 0px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Pressure {
+  padding-top: 13.05px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hpa {
+  padding-top: 8px;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  margin: 0px;
+  font-weight: 600;
+  line-height: normal;
+}
+.pressureP {
+  padding-top: 10px;
+  margin: 0px;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

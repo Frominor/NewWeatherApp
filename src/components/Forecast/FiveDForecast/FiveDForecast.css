@@ -1,0 +1,72 @@
+.FiveDForecast {
+  width: 414px;
+  height: 366px;
+  flex-shrink: 0;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  background: #444;
+}
+
+.HourlyForecast {
+  width: 870px;
+  height: 366px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #444;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.5);
+}
+.FiveDTitle {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.FiveDTitle {
+  padding: 18px 63px 0px 63px;
+}
+.forecast_item {
+  display: flex;
+  padding: 0px 14px 0px 30px;
+  align-items: center;
+  width: 414px;
+  justify-content: space-evenly;
+}
+.forecat_temp {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.forecast_date {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.test {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+}
+.syka {
+  display: flex;
+  padding: 0px 14px 0px 30px;
+  align-items: center;
+  width: 414px;
+  justify-content: space-evenly;
+}
+.syka > .test {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  padding-left: 10px;
+}

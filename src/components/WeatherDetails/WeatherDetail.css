@@ -1,0 +1,37 @@
+.WeatherDetails {
+  width: 780px;
+  height: 330px;
+  display: flex;
+
+  flex-shrink: 0;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 30px;
+  background: #444;
+}
+
+.Box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 30px;
+}
+
+.imgTemperature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.imgTemperature > img {
+  height: 250px;
+  width: 240px;
+}
+.imgTemperature > p {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  padding-left: 10px;
+  line-height: normal;
+}

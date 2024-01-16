@@ -7,11 +7,10 @@
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.5);
   color: white;
   text-align: center;
-  margin-right: 55px;
-  position: relative;
 }
 .DateAndTimeInfoBox {
   display: flex;
+  column-gap: 30px;
 }
 .TimeBox {
   display: flex;

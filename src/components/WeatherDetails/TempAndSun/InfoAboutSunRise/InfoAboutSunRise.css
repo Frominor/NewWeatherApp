@@ -1,0 +1,35 @@
+.sunrise {
+  display: flex;
+  column-gap: 11px;
+  align-items: center;
+}
+.sunset {
+  display: flex;
+  column-gap: 11px;
+  align-items: center;
+}
+.InfoAboutSunRise {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding-left: 40px;
+}
+.sunnumbers {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.sunnumbers > p {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

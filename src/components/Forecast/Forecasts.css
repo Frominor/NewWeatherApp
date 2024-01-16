@@ -1,0 +1,4 @@
+.ForecastsBox {
+  display: flex;
+  column-gap: 60px;
+}

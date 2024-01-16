@@ -1,4 +1,5 @@
 @import url("./Reset.css");
+@import url("./media.css");
 .App {
   background: rgb(46, 44, 44);
   background: linear-gradient(
@@ -7,4 +8,55 @@
     rgba(8, 5, 5, 1) 83%
   );
   height: 100vh;
+}
+
+@media (max-width: 1350px) {
+  .WeatherDetails {
+    width: 680px !important;
+  }
+  .imgTemperature > img {
+    height: 230px !important;
+  }
+  .imgTemperature > p {
+    padding: 25px 0px 0px 0px !important;
+  }
+  .HourlyForecast {
+    width: 770px !important;
+  }
+}
+@media (max-width: 1250px) {
+  .HourlyForecast {
+    width: 550px !important;
+  }
+  .HourlyForecast_item {
+    width: 90px !important;
+  }
+  .WeatherDetails {
+    width: 550px !important;
+  }
+  .TemperaturaAndInfoAboutSun {
+    margin: 20px 0px 2px 2px !important;
+  }
+  .imgTemperature > img {
+    height: 200px !important;
+  }
+  .imgTemperature > p {
+    padding-left: 0px !important;
+  }
+  .Temp {
+    font-size: 60px !important;
+    text-align: center;
+    margin-bottom: 0px !important;
+  }
+  .FeelsLike {
+    font-size: 20px !important;
+    text-align: center !important;
+  }
+
+  .InfoAboutTemp {
+    padding-bottom: 20px !important;
+  }
+  .ExtraDetails {
+    gap: 0px !important;
+  }
 }

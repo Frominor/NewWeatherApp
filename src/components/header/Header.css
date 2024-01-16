@@ -36,7 +36,7 @@ input::placeholder {
   position: relative;
 }
 .container {
-  min-width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 .header_box {
