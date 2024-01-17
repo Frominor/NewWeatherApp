@@ -1,7 +1,10 @@
 import React from "react";
 import "./DateAndTime.css";
-const DateAndTime: React.FC = () => {
-  const [WeekDays, SetWeekDays] = React.useState<String[]>([
+import { UseAppSelector } from "../../hooks";
+const DateAndTime = () => {
+  const State = UseAppSelector((State) => State.Weather);
+
+  const [WeekDays, SetWeekDays] = React.useState([
     "Sunday",
     "Monday",
     "Tuesday",
@@ -10,7 +13,7 @@ const DateAndTime: React.FC = () => {
     "Friday",
     "Saturday",
   ]);
-  const [Month, SetMonth] = React.useState<String[]>([
+  const [Month, SetMonth] = React.useState([
     "January",
     "February",
     "March",
@@ -26,7 +29,7 @@ const DateAndTime: React.FC = () => {
   ]);
   return (
     <div className="DateAndTimeInfo">
-      <h3>Athens</h3>
+      <h3>{State?.weather?.name ? State.weather.name : "Athens"}</h3>
 
       <div>
         <h2>

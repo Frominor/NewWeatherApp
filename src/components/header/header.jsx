@@ -5,13 +5,14 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import location from "../../imgs/current location icon.png";
 import Switch from "@mui/material/Switch";
 import axios from "axios";
-import { UseAppSelector } from "../../hooks";
+import { UseAppDispatch, UseAppSelector } from "../../hooks";
+import { addWeather, fetchUserById } from "../../store/weatherSlice";
 
-const Header: React.FC = () => {
-  interface IState {
-    user: Object;
-  }
-  const State = UseAppSelector((State) => State.Weather.list);
+const Header = () => {
+  const dispatch = UseAppDispatch();
+
+  const [Coords, SetCoords] = React.useState();
+  const State = UseAppSelector((State) => State.Weather);
   console.log(State);
   const GetWeather = async () => {
     const res = await axios.get(
@@ -19,16 +20,25 @@ const Header: React.FC = () => {
     );
     console.log(res.data);
   };
-  const [City, SetCity] = React.useState<String>("");
-  function success(pos: any) {
-    const crd = pos.coords;
 
-    console.log("Your current position is:");
-    console.log(`Latitude : ${crd.latitude}`);
-    console.log(`Longitude: ${crd.longitude}`);
-    console.log(`More or less ${crd.accuracy} meters.`);
+  const [City, SetCity] = React.useState("");
+  function success(pos) {
+    const crd = pos.coords;
+    return crd;
   }
-  console.log(window.navigator.geolocation.getCurrentPosition(success));
+  const getCurrentWeather = () => {
+    dispatch(fetchUserById(State));
+  };
+  React.useEffect(() => {
+    function success(pos) {
+      const crd = pos.coords;
+      SetCoords(crd);
+    }
+    navigator.geolocation.getCurrentPosition(success);
+  }, []);
+  React.useEffect(() => {
+    dispatch(addWeather(Coords));
+  }, [Coords]);
   return (
     <header className="Header">
       <div className="container">
@@ -51,7 +61,7 @@ const Header: React.FC = () => {
             ></input>
           </div>
           <div className="Button">
-            <button onClick={GetWeather}>
+            <button onClick={getCurrentWeather}>
               <img src={location} className="geoposition"></img>
               <p>Current Location</p>
             </button>

@@ -1,10 +1,10 @@
 .InfoAboutTemp {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 .Temp {
   flex-shrink: 0;
   font-family: Poppins;
-  font-size: 80px;
+  font-size: 75px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -20,6 +20,7 @@
 }
 .FeelsLike {
   flex-shrink: 0;
+  width: 100%;
   text-align: start;
   color: rgba(255, 255, 255, 0.8);
   font-family: Poppins;

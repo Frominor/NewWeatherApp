@@ -11,7 +11,7 @@
 .InfoAboutSunRise {
   display: flex;
   flex-direction: column;
-  row-gap: 20px;
+  row-gap: 10px;
   padding-left: 40px;
 }
 .sunnumbers {
