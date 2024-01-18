@@ -4,6 +4,7 @@ import { UseAppSelector } from "../../hooks";
 const DateAndTime = () => {
   const State = UseAppSelector((State) => State.Weather);
 
+  const [Data, SetDate] = React.useState();
   const [WeekDays, SetWeekDays] = React.useState([
     "Sunday",
     "Monday",
@@ -13,6 +14,22 @@ const DateAndTime = () => {
     "Friday",
     "Saturday",
   ]);
+
+  React.useEffect(() => {
+    const timer = setInterval(
+      () =>
+        SetDate(
+          new Date().getHours() > 10
+            ? new Date().getHours()
+            : "0" + new Date().getHours() + ":" + new Date().getUTCMinutes()
+        ),
+      1000
+    );
+    return () => {
+      clearInterval(timer);
+    };
+  }, {});
+
   const [Month, SetMonth] = React.useState([
     "January",
     "February",
@@ -29,13 +46,14 @@ const DateAndTime = () => {
   ]);
   return (
     <div className="DateAndTimeInfo">
-      <h3>{State?.weather?.name ? State.weather.name : "Athens"}</h3>
+      <h3>{State?.City ? State.City : "Athens"}</h3>
 
       <div>
         <h2>
-          {new Date().getMinutes() < 10
+          {Data}
+          {/* {new Date().getMinutes() < 10
             ? new Date().getHours() + ":" + "0" + new Date().getMinutes()
-            : new Date().getHours() + ":" + new Date().getMinutes()}
+            : new Date().getHours() + ":" + new Date().getMinutes()} */}
         </h2>
         <div className="TimeBox">
           <h4>{WeekDays[new Date().getUTCDay() - 1]},</h4>

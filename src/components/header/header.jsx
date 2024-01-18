@@ -4,6 +4,8 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import location from "../../imgs/current location icon.png";
 import Switch from "@mui/material/Switch";
+import Alert from "@mui/material/Alert";
+
 import axios from "axios";
 import { UseAppDispatch, UseAppSelector } from "../../hooks";
 import { addWeather, fetchUserById } from "../../store/weatherSlice";
@@ -14,12 +16,6 @@ const Header = () => {
   const [Coords, SetCoords] = React.useState();
   const State = UseAppSelector((State) => State.Weather);
   console.log(State);
-  const GetWeather = async () => {
-    const res = await axios.get(
-      "http://api.openweathermap.org/geo/1.0/direct?q=Oryol&limit=5&appid=9e2676b5d5179f93b75b68b95d3b7bf3"
-    );
-    console.log(res.data);
-  };
 
   const [City, SetCity] = React.useState("");
   function success(pos) {
@@ -68,6 +64,13 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {State.Error ? (
+        <Alert sx={{ position: "absolute" }} severity="error">
+          {State.Error}
+        </Alert>
+      ) : (
+        ""
+      )}
     </header>
   );
 };
