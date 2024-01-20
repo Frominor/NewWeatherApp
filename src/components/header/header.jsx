@@ -18,10 +18,6 @@ const Header = () => {
   console.log(State);
 
   const [City, SetCity] = React.useState("");
-  function success(pos) {
-    const crd = pos.coords;
-    return crd;
-  }
   const getCurrentWeather = () => {
     dispatch(fetchUserById(State));
   };
@@ -65,7 +61,14 @@ const Header = () => {
         </div>
       </div>
       {State.Error ? (
-        <Alert sx={{ position: "absolute" }} severity="error">
+        <Alert
+          sx={{
+            position: "absolute",
+            transform: `translateX(${State.Error !== null ? "-110%" : "20%"})`,
+            transition: "0.5s easy-in-out",
+          }}
+          severity="error"
+        >
           {State.Error}
         </Alert>
       ) : (

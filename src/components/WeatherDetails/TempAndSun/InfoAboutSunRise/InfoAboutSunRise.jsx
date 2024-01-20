@@ -5,6 +5,7 @@ import "./InfoAboutSunRise.css";
 import { UseAppSelector } from "../../../../hooks";
 const InfoAboutSunRise = () => {
   const State = UseAppSelector((State) => State.Weather);
+  console.log(State?.weather);
   return (
     <div className="InfoAboutSunRise">
       <div className="sunrise">
@@ -13,12 +14,13 @@ const InfoAboutSunRise = () => {
           <p>Sunrise</p>
 
           <span>
-            {State?.weather?.main
+            {State?.weather?.sys?.sunrise
               ? new Date(State?.weather?.sys?.sunrise * 1000)
                   .toUTCString()
-                  .split(" ")[4]
-              : new Date().getHours()}
-            <span> AM</span>
+                  .split(" ")[4] +
+                " " +
+                "AM"
+              : "Not info"}
           </span>
         </div>
       </div>
@@ -27,12 +29,13 @@ const InfoAboutSunRise = () => {
         <div className="sunnumbers">
           <p>Sunset</p>
           <span>
-            {State.weather?.sys?.sunrise
+            {State?.weather?.sys?.sunset
               ? new Date(State?.weather?.sys?.sunset * 10000)
                   .toUTCString()
-                  .split(" ")[4]
-              : new Date().getHours()}
-            <span> AM</span>
+                  .split(" ")[4] +
+                " " +
+                "AM"
+              : "Not info"}
           </span>
         </div>
       </div>

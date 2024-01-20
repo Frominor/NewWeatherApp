@@ -5,6 +5,7 @@ const DateAndTime = () => {
   const State = UseAppSelector((State) => State.Weather);
 
   const [Data, SetDate] = React.useState();
+  console.log(Data);
   const [WeekDays, SetWeekDays] = React.useState([
     "Sunday",
     "Monday",
@@ -20,8 +21,17 @@ const DateAndTime = () => {
       () =>
         SetDate(
           new Date().getHours() > 10
-            ? new Date().getHours()
-            : "0" + new Date().getHours() + ":" + new Date().getUTCMinutes()
+            ? new Date().getHours() +
+                ":" +
+                (new Date().getUTCMinutes() > 10
+                  ? new Date().getUTCMinutes()
+                  : "0" + new Date().getUTCMinutes())
+            : "0" +
+                new Date().getHours() +
+                ":" +
+                (new Date().getUTCMinutes() > 10
+                  ? new Date().getUTCMinutes()
+                  : "0" + new Date().getUTCMinutes())
         ),
       1000
     );
@@ -49,12 +59,7 @@ const DateAndTime = () => {
       <h3>{State?.City ? State.City : "Athens"}</h3>
 
       <div>
-        <h2>
-          {Data}
-          {/* {new Date().getMinutes() < 10
-            ? new Date().getHours() + ":" + "0" + new Date().getMinutes()
-            : new Date().getHours() + ":" + new Date().getMinutes()} */}
-        </h2>
+        <h2>{Data}</h2>
         <div className="TimeBox">
           <h4>{WeekDays[new Date().getUTCDay() - 1]},</h4>
           <h4>{new Date().toLocaleString("default", { day: "2-digit" })}</h4>

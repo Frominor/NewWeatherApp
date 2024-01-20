@@ -3,6 +3,7 @@ import wind from "../../../../imgs/wind 1.png";
 import Uv from "../../../../imgs/uv-white 1.png";
 import "./WindAndUv.css";
 import { UseAppSelector } from "../../../../hooks";
+
 const WindAndUv = () => {
   const State = UseAppSelector((State) => State.Weather);
   return (

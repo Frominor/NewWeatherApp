@@ -10,7 +10,7 @@
 }
 .DateAndTimeInfoBox {
   display: flex;
-  column-gap: 30px;
+  column-gap: 50px;
 }
 .TimeBox {
   display: flex;

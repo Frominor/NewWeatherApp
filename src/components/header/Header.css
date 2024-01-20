@@ -32,15 +32,14 @@ input::placeholder {
   font-weight: 400;
   line-height: normal;
 }
-.FindLocation {
-  position: relative;
-}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
 }
 .header_box {
   display: flex;
+  column-gap: 90px;
   padding-top: 50px;
   align-items: center;
   justify-content: space-around;
