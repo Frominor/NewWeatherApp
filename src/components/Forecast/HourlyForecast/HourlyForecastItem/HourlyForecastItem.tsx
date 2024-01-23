@@ -1,23 +1,11 @@
 import React from "react";
-import clear3 from "../../../../imgs/clear 3.png";
 import navigation from "../../../../imgs/navigation 1.png";
 import clouds from "../../../../imgs/clouds 1.png";
 import sneg from "../../../../imgs/rain 1.png";
 import drizzle from "../../../../imgs/drizzle 1.png";
 import mist from "../../../../imgs/mist 1.png";
-type Props = {
-  weather: {
-    description: String;
-  }[];
-  dt_txt: String;
-  main: {
-    temp: number;
-  };
-  wind: {
-    speed: number;
-    deg: number;
-  };
-};
+import { Props } from "../../../../models/IForecastItem";
+import "./HourlyForecastItem.css";
 export const HourlyForecastItem: React.FC<Props> = ({
   dt_txt,
   weather,
@@ -49,6 +37,8 @@ export const HourlyForecastItem: React.FC<Props> = ({
                 ? drizzle
                 : weather[0].description == "scattered clouds"
                 ? clouds
+                : weather[0].description == "snow"
+                ? sneg
                 : ""
             }
           ></img>

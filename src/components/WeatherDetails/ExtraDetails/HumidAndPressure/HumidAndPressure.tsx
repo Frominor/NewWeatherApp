@@ -3,7 +3,7 @@ import humid from "../../../../imgs/humidity 1.png";
 import pressure from "../../../../imgs/pressure-white 1.png";
 import "./HumidAndPressure.css";
 import { UseAppSelector } from "../../../../hooks";
-const HumidAndPressure = () => {
+const HumidAndPressure: React.FC = () => {
   const State = UseAppSelector((State) => State.Weather);
   return (
     <div className="HumidAndPressure">

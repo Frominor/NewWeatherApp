@@ -1,11 +1,11 @@
 import React from "react";
 import "./InfoAboutTemp.css";
 import { UseAppSelector } from "../../../../hooks";
-const InfoAboutTemp = () => {
+const InfoAboutTemp: React.FC = () => {
   const State = UseAppSelector((State) => State.Weather);
   return (
     <div className="InfoAboutTemp">
-      {State.weather?.main ? (
+      {State?.weather?.main ? (
         <div className="InfoAboutTemp">
           <p className="Temp">
             {Math.round(State.weather.main.temp) - 273 + "°C"}

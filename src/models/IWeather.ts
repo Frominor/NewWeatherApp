@@ -14,12 +14,16 @@ export interface IWeather {
 }
 
 export interface State {
-  Lat: number;
-  Lon: number;
+  Lat: number | null;
+  Lon: number | null;
   token: {};
-  weather: IWeather | {};
-  FiveDForecast: {}[];
+  weather: IWeather | null;
+  FiveDForecast: IWeather[];
   HourlyWeather: IWeather[];
+  CurrentWeather: {
+    lat: number | null;
+    lon: number | null;
+  };
   City: String;
-  Error: String;
+  Error: String | null;
 }

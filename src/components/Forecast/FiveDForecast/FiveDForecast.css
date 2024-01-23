@@ -55,6 +55,7 @@
 .test {
   display: flex;
   align-items: center;
+
   column-gap: 30px;
 }
 .syka {
@@ -62,11 +63,14 @@
   padding: 0px 14px 0px 30px;
   align-items: center;
   width: 414px;
-  justify-content: space-evenly;
 }
 .syka > .test {
   display: flex;
   align-items: center;
   column-gap: 30px;
   padding-left: 10px;
+}
+.forecast_date_box {
+  display: flex;
+  column-gap: 20px;
 }

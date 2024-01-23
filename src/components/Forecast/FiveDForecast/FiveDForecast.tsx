@@ -2,34 +2,73 @@ import React from "react";
 import clear from "../../../imgs/clear 2.png";
 import clouds from "../../../imgs/clouds 1.png";
 import drizzle from "../../../imgs/drizzle 1.png";
-import rain from "../../../imgs/rain 1.png";
+import sneg from "../../../imgs/rain 1.png";
 import mist from "../../../imgs/mist 1.png";
 import "./FiveDForecast.css";
+import { UseAppSelector } from "../../../hooks";
 const FiveDForecast: React.FC = () => {
-  const [Forecast, SetForecast] = React.useState([
-    { img: clear, temp: "12°C", date: "Friday, 1 Sep" },
-    { img: clouds, temp: "23°C", date: "Saturday, 2 Sep" },
-    { img: drizzle, temp: "26°C", date: "Sunday, 3 Sep" },
-    { img: rain, temp: "17°C", date: "Monday, 4 Sep" },
-    { img: mist, temp: "16°C", date: "Tuesday, 5 Sep" },
-  ]);
+  const State = UseAppSelector((State) => State.Weather);
+  const Months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
   return (
     <div className="FiveDForecast">
       <p className="FiveDTitle">5 Days Forecast:</p>
 
-      {Forecast.map((item) => {
+      {State.FiveDForecast.map((item) => {
+        console.log(item);
         return (
-          <div
-            className={
-              item.date.split(",")[0] == "Saturday" ? "syka" : "forecast_item"
-            }
-          >
+          <div className={"forecast_item"}>
             <div className="test">
-              <img src={item.img}></img>
-              <p className="forecat_temp">{item.temp}</p>
+              <img
+                src={
+                  item.weather[0].description == "overcast clouds"
+                    ? clouds
+                    : item.weather[0].description == "light snow"
+                    ? sneg
+                    : item.weather[0].description == "light rain"
+                    ? drizzle
+                    : item.weather[0].description == "broken clouds"
+                    ? mist
+                    : item.weather[0].description == "few clouds"
+                    ? drizzle
+                    : item.weather[0].description == "scattered clouds"
+                    ? clouds
+                    : item.weather[0].description == "snow"
+                    ? sneg
+                    : ""
+                }
+              ></img>
+              <p className="forecat_temp">
+                {Math.round(item.main.feels_like - 273)}°C
+              </p>
             </div>
-
-            <p className="forecast_date">{item.date}</p>
+            <div className="forecast_date_box">
+              <p className="forecast_date">
+                {new Date(
+                  +item.dt_txt.split(" ")[0].split("-")[0],
+                  +item.dt_txt.split(" ")[0].split("-")[1],
+                  +item.dt_txt.split(" ")[0].split("-")[2]
+                ).toLocaleDateString("en-US", { weekday: "short" })}
+              </p>
+              <p className="forecast_date">
+                {item.dt_txt.split(" ")[0].split("-")[2]}
+              </p>
+              <p className="forecast_date">
+                {Months[+item.dt_txt.split(" ")[0].split("-")[1] - 1]}
+              </p>
+            </div>
           </div>
         );
       })}

@@ -5,6 +5,8 @@ header {
   align-items: center;
 }
 input {
+  position: relative;
+  z-index: 1;
   min-width: 803px;
   height: 42px;
   background-image: url("../../imgs/search\ 1.png");
@@ -44,7 +46,7 @@ input::placeholder {
   align-items: center;
   justify-content: space-around;
 }
-button {
+.Button > button {
   width: 200px;
   height: 42px;
   flex-shrink: 0;
@@ -60,14 +62,7 @@ button {
 .geoposition {
   margin-left: 5px;
 }
-.lupa {
-  position: absolute;
-  width: 30px;
-  height: 36px;
-  flex-shrink: 0;
-  left: 10%;
-  top: 7%;
-}
+
 button > p {
   color: white;
   text-align: center;
@@ -76,4 +71,23 @@ button > p {
   margin-right: 10px;
   font-weight: 600;
   line-height: normal;
+}
+
+.Find {
+  position: absolute;
+  width: 90px;
+  height: 45px;
+  background-color: lightcoral;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  font-family: Poppins;
+  font-style: normal;
+  margin-right: 10px;
+  font-weight: 600;
+  z-index: 2000;
+  line-height: normal;
+  right: 31%;
+  top: 5.4%;
+  cursor: pointer;
 }

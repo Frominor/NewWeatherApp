@@ -4,7 +4,7 @@ import Uv from "../../../../imgs/uv-white 1.png";
 import "./WindAndUv.css";
 import { UseAppSelector } from "../../../../hooks";
 
-const WindAndUv = () => {
+const WindAndUv: React.FC = () => {
   const State = UseAppSelector((State) => State.Weather);
   return (
     <div className="WindAndUv">

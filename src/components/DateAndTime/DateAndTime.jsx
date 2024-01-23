@@ -6,7 +6,7 @@ const DateAndTime = () => {
 
   const [Data, SetDate] = React.useState();
   console.log(Data);
-  const [WeekDays, SetWeekDays] = React.useState([
+  const WeekDays = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -14,7 +14,7 @@ const DateAndTime = () => {
     "Thursday",
     "Friday",
     "Saturday",
-  ]);
+  ];
 
   React.useEffect(() => {
     const timer = setInterval(
@@ -40,7 +40,7 @@ const DateAndTime = () => {
     };
   }, {});
 
-  const [Month, SetMonth] = React.useState([
+  const Month = [
     "January",
     "February",
     "March",
@@ -53,7 +53,7 @@ const DateAndTime = () => {
     "October",
     "November",
     "December",
-  ]);
+  ];
   return (
     <div className="DateAndTimeInfo">
       <h3>{State?.City ? State.City : "Athens"}</h3>

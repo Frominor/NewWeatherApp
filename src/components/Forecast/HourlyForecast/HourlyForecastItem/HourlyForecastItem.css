@@ -1,0 +1,52 @@
+.HourlyForecast_item {
+  width: 130px;
+  height: 270px;
+  flex-shrink: 0;
+  border-radius: 40px;
+  background: #373636;
+}
+.HourlyForecast_item_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HourlyForecast_item_header > p {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 24px;
+  margin: 0px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  padding-top: 13px;
+}
+.HourlyForecast_item_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.HourlyForecast_item_main_first {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.HourlyForecast_item_main_first > P {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.HourlyForecast_item_main_second {
+  display: flex;
+  flex-direction: column;
+}
+.HourlyForecast_item_main_second > p {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
