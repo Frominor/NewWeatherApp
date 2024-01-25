@@ -19,7 +19,7 @@
   margin: 0px;
   padding-bottom: 10px;
   flex-shrink: 0;
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   font-family: Poppins;
   font-size: 20px;
@@ -29,7 +29,7 @@
 }
 .humidityP {
   flex-shrink: 0;
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   margin: 0px;
   font-family: Poppins;
@@ -46,7 +46,7 @@
 }
 .hpa {
   padding-top: 8px;
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   font-family: Poppins;
   font-size: 20px;
@@ -58,7 +58,7 @@
 .pressureP {
   padding-top: 10px;
   margin: 0px;
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   font-family: Poppins;
   font-size: 16px;

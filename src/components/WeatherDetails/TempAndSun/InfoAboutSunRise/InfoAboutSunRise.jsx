@@ -1,15 +1,16 @@
 import React from "react";
-import sunrise from "../../../../imgs/sunrise-white 1.png";
-import sunset from "../../../../imgs/sunset-white 1.png";
+
+import { ReactComponent as Sunset } from "./sunset.svg";
+import { ReactComponent as Sunrise } from "./sunrise.svg";
 import "./InfoAboutSunRise.css";
-import { UseAppSelector } from "../../../../hooks";
+import { UseAppSelector } from "../../../../typedhooks";
 const InfoAboutSunRise = () => {
   const State = UseAppSelector((State) => State.Weather);
-  console.log(State?.weather);
+  console.log(State.themecolor);
   return (
     <div className="InfoAboutSunRise">
       <div className="sunrise">
-        <img src={sunrise}></img>
+        <Sunrise className="sunrise"></Sunrise>
         <div className="sunnumbers">
           <p>Sunrise</p>
 
@@ -25,7 +26,8 @@ const InfoAboutSunRise = () => {
         </div>
       </div>
       <div className="sunset">
-        <img src={sunset}></img>
+        <Sunset className="sunset"></Sunset>
+
         <div className="sunnumbers">
           <p>Sunset</p>
           <span>

@@ -1,5 +1,5 @@
 .HourlyForTitle {
-  color: #fff;
+  color: var(--text-color);
   padding: 13px 0px 19px 0px;
   text-align: center;
   font-family: Poppins;

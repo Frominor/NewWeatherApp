@@ -1,6 +1,6 @@
 import React from "react";
 import "./DateAndTime.css";
-import { UseAppSelector } from "../../hooks";
+import { UseAppSelector } from "../../typedhooks";
 const DateAndTime = () => {
   const State = UseAppSelector((State) => State.Weather);
 

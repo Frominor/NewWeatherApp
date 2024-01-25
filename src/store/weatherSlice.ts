@@ -31,6 +31,7 @@ export const FindCityCoords = createAsyncThunk(
 const initialState: State = {
   Lat: null,
   Lon: null,
+  themecolor: null,
   token: {},
   weather: null,
   FiveDForecast: [],
@@ -53,6 +54,9 @@ const UserSlice = createSlice({
     ) {
       state.CurrentWeather.lat = action.payload?.latitude;
       state.CurrentWeather.lon = action.payload?.longitude;
+    },
+    getThemeColor(state, action: PayloadAction<string>) {
+      state.themecolor = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -113,7 +117,9 @@ const UserSlice = createSlice({
             }
             boolean = false;
           }
-
+          let zero = arr[0];
+          arr.splice(0, 1);
+          arr.push(zero);
           state.HourlyWeather = arr;
           state.Error = null;
         }
@@ -149,5 +155,5 @@ const UserSlice = createSlice({
       });
   },
 });
-export const { addWeather } = UserSlice.actions;
+export const { addWeather, getThemeColor } = UserSlice.actions;
 export const UserReducer = UserSlice.reducer;

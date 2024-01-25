@@ -13,7 +13,16 @@ export const HourlyForecastItem: React.FC<Props> = ({
   wind,
 }) => {
   return (
-    <div className="HourlyForecast_item">
+    <div
+      className="HourlyForecast_item"
+      style={{
+        background:
+          dt_txt.split(" ")[1].split(":")[0] == "00" ||
+          dt_txt.split(" ")[1].split(":")[0] > "18"
+            ? " linear-gradient(174deg, #443D64 -15.92%, rgba(101, 130, 198, 0.00) 192.45%)"
+            : "linear-gradient(169deg, #F88508 -15.98%, rgba(246, 250, 217, 0.00) 150.58%)",
+      }}
+    >
       <div className="HourlyForecast_item_header">
         <p>
           {dt_txt.split(" ")[1].split(":")[0] +

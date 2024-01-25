@@ -1,12 +1,7 @@
 @import url("./Reset.css");
 @import url("./media.css");
 .App {
-  background: rgb(46, 44, 44);
-  background: linear-gradient(
-    117deg,
-    rgba(46, 44, 44, 1) 52%,
-    rgba(8, 5, 5, 1) 83%
-  );
+  background: var(--background-color);
   height: 100vh;
 }
 

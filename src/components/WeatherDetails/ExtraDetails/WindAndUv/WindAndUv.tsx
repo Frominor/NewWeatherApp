@@ -2,7 +2,7 @@ import React from "react";
 import wind from "../../../../imgs/wind 1.png";
 import Uv from "../../../../imgs/uv-white 1.png";
 import "./WindAndUv.css";
-import { UseAppSelector } from "../../../../hooks";
+import { UseAppSelector } from "../../../../typedhooks";
 
 const WindAndUv: React.FC = () => {
   const State = UseAppSelector((State) => State.Weather);

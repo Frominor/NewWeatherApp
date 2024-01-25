@@ -16,6 +16,7 @@ export interface IWeather {
 export interface State {
   Lat: number | null;
   Lon: number | null;
+  themecolor: string | null;
   token: {};
   weather: IWeather | null;
   FiveDForecast: IWeather[];

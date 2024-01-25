@@ -4,7 +4,7 @@
   flex-shrink: 0;
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.5);
   border-radius: 30px;
-  background: #444;
+  background: var(--bacground-color-item);
 }
 
 .HourlyForecast {
@@ -12,11 +12,11 @@
   height: 366px;
   flex-shrink: 0;
   border-radius: 30px;
-  background: #444;
+  background: var(--bacground-color-item);
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.5);
 }
 .FiveDTitle {
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   font-family: Poppins;
   font-size: 32px;
@@ -35,7 +35,7 @@
   justify-content: space-evenly;
 }
 .forecat_temp {
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   font-family: Poppins;
   font-size: 24px;
@@ -44,7 +44,7 @@
   line-height: normal;
 }
 .forecast_date {
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   font-family: Poppins;
   font-size: 20px;

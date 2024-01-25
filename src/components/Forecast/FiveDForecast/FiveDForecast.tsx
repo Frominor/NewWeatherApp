@@ -5,7 +5,7 @@ import drizzle from "../../../imgs/drizzle 1.png";
 import sneg from "../../../imgs/rain 1.png";
 import mist from "../../../imgs/mist 1.png";
 import "./FiveDForecast.css";
-import { UseAppSelector } from "../../../hooks";
+import { UseAppSelector } from "../../../typedhooks";
 const FiveDForecast: React.FC = () => {
   const State = UseAppSelector((State) => State.Weather);
   const Months = [

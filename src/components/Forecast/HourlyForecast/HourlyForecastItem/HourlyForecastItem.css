@@ -3,7 +3,7 @@
   height: 270px;
   flex-shrink: 0;
   border-radius: 40px;
-  background: #373636;
+  background: var(--bacground-forecast_item);
 }
 .HourlyForecast_item_header {
   display: flex;
@@ -11,7 +11,7 @@
   justify-content: center;
 }
 .HourlyForecast_item_header > p {
-  color: #fff;
+  color: var(--text-color);
   font-family: Poppins;
   font-size: 24px;
   margin: 0px;
@@ -31,7 +31,7 @@
   align-items: center;
 }
 .HourlyForecast_item_main_first > P {
-  color: #fff;
+  color: var(--text-color);
   font-family: Poppins;
   font-size: 20px;
   font-style: normal;
@@ -43,7 +43,7 @@
   flex-direction: column;
 }
 .HourlyForecast_item_main_second > p {
-  color: #fff;
+  color: var(--text-color);
   font-family: Poppins;
   font-size: 20px;
   font-style: normal;

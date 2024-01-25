@@ -2,7 +2,7 @@ import React from "react";
 
 import "./HourlyForecast.css";
 
-import { UseAppSelector } from "../../../hooks";
+import { UseAppSelector } from "../../../typedhooks";
 import { HourlyForecastItem } from "./HourlyForecastItem/HourlyForecastItem";
 import { IWeather } from "../../../models/IWeather";
 const HourlyForecast = () => {

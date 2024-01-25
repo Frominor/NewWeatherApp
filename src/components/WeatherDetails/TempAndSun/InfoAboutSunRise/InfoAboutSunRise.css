@@ -17,8 +17,7 @@
 .sunnumbers {
   display: flex;
   flex-direction: column;
-  color: white;
-  color: #fff;
+  color: var(--text-color);
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
@@ -26,10 +25,14 @@
   line-height: normal;
 }
 .sunnumbers > p {
-  color: #fff;
+  color: var(--text-color);
   font-family: Poppins;
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+.sunrise,
+.sunset {
+  fill: var(--svg_fill_color);
 }

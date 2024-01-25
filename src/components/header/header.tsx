@@ -5,10 +5,11 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import location from "../../imgs/current location icon.png";
 import Switch from "@mui/material/Switch";
 import Alert from "@mui/material/Alert";
+import { useTheme } from "./../../hooks/useTheme";
 //@ts-ignore
 import { debounce } from "lodash-es";
 import axios from "axios";
-import { UseAppDispatch, UseAppSelector } from "../../hooks";
+import { UseAppDispatch, UseAppSelector } from "../../typedhooks";
 import {
   FindCityCoords,
   addWeather,
@@ -17,7 +18,7 @@ import {
 
 const Header = () => {
   const dispatch = UseAppDispatch();
-
+  const { theme, setTheme } = useTheme();
   const [Coords, SetCoords] = React.useState<{
     latitude: number;
     longitude: number;
@@ -57,9 +58,17 @@ const Header = () => {
           <div>
             <FormGroup>
               <FormControlLabel
-                control={<Switch defaultChecked />}
-                label="Label"
-                sx={{ color: "white" }}
+                control={<Switch />}
+                label="Theme"
+                defaultValue={"dark"}
+                onChange={() => {
+                  if (theme == "dark") {
+                    setTheme("light");
+                  } else {
+                    setTheme("dark");
+                  }
+                }}
+                sx={{ color: " var(--text-color)" }}
               />
             </FormGroup>
           </div>
