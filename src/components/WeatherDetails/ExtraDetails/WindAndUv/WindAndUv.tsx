@@ -1,22 +1,22 @@
 import React from "react";
-import wind from "../../../../imgs/wind 1.png";
 import Uv from "../../../../imgs/uv-white 1.png";
 import "./WindAndUv.css";
 import { UseAppSelector } from "../../../../typedhooks";
-
+import { ReactComponent as Wind } from "./wind-svgrepo-com.svg";
+import { ReactComponent as UV } from "./uv-index-alt-svgrepo-com.svg";
 const WindAndUv: React.FC = () => {
   const State = UseAppSelector((State) => State.Weather);
   return (
     <div className="WindAndUv">
       <div className="Humid">
-        <img src={wind}></img>
+        <Wind className="wind"></Wind>
         <p className="procent">
           {State.weather?.main ? State.weather.wind.speed : 2} km/h
         </p>
         <p className="humidityP">Wind Speed</p>
       </div>
       <div className="Pressure">
-        <img src={Uv}></img>
+        <UV className="Uv"></UV>
         <p className="hpa">8</p>
         <p className="pressureP">UV</p>
       </div>

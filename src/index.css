@@ -87,7 +87,6 @@ input[type="submit"] {
   background: none;
   cursor: pointer;
 }
-
 input:focus,
 input:active,
 button:focus,
@@ -109,6 +108,7 @@ legend {
 }
 
 html[data-theme="dark"] {
+  --input-text-color: rgba(255, 255, 255, 0.6);
   --background-color: linear-gradient(
     117deg,
     rgba(46, 44, 44, 1) 52%,
@@ -145,4 +145,5 @@ html[data-theme="light"] {
     rgba(246, 250, 217, 0) 150.58%
   );
   --svg_fill_color: black;
+  --input-text-color: rgba(10, 3, 3, 0.6);
 }

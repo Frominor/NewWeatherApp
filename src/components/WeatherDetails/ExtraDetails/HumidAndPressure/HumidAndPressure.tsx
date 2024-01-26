@@ -1,14 +1,15 @@
 import React from "react";
-import humid from "../../../../imgs/humidity 1.png";
 import pressure from "../../../../imgs/pressure-white 1.png";
 import "./HumidAndPressure.css";
 import { UseAppSelector } from "../../../../typedhooks";
+import { ReactComponent as Humidity } from "./humidity-svgrepo-com.svg";
+import { ReactComponent as Pressure } from "./pressure-svgrepo-com.svg";
 const HumidAndPressure: React.FC = () => {
   const State = UseAppSelector((State) => State.Weather);
   return (
     <div className="HumidAndPressure">
       <div className="Humid">
-        <img src={humid}></img>
+        <Humidity className="Humidity"></Humidity>
         <p className="procent">
           {State.weather?.main
             ? Math.trunc(
@@ -23,7 +24,7 @@ const HumidAndPressure: React.FC = () => {
         <p className="humidityP">Humidity</p>
       </div>
       <div className="Pressure">
-        <img src={pressure}></img>
+        <Pressure className="Pressure"></Pressure>
         <p className="hpa">
           {State.weather?.main ? State.weather.main.pressure : 9322} hpa
         </p>

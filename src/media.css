@@ -1,1 +1,106 @@
+@media (max-width: 1350px) {
+  .WeatherDetails {
+    width: 680px !important;
+  }
+  .imgTemperature > img {
+    height: 230px !important;
+  }
+  .imgTemperature > p {
+    padding: 25px 0px 0px 0px !important;
+  }
+  .HourlyForecast {
+    width: 770px !important;
+  }
+  .header_box {
+    column-gap: 40px !important;
+  }
+}
+@media (max-width: 1250px) {
+  .header_box {
+    column-gap: 10px !important;
+  }
+  .HourlyForecast {
+    width: 550px !important;
+  }
+  .HourlyForecast_item {
+    width: 90px !important;
+  }
+  .WeatherDetails {
+    width: 550px !important;
+  }
+  .TemperaturaAndInfoAboutSun {
+    margin: 20px 0px 2px 2px !important;
+  }
+  .imgTemperature > img {
+    height: 200px !important;
+  }
+  .imgTemperature > p {
+    padding-left: 0px !important;
+  }
+  .Temp {
+    font-size: 60px !important;
+    text-align: center;
+    margin-bottom: 0px !important;
+  }
+  .FeelsLike {
+    font-size: 20px !important;
+    text-align: center !important;
+  }
 
+  .InfoAboutTemp {
+    padding-bottom: 20px !important;
+  }
+  .ExtraDetails {
+    gap: 0px !important;
+  }
+}
+@media (max-width: 1150px) {
+  .FindLocation {
+    min-width: 700px !important;
+  }
+  .Button > button {
+    width: 170px !important;
+  }
+  button > p {
+    font-size: 14px !important;
+  }
+
+  .DateAndTimeInfo {
+    width: 460px !important;
+  }
+  .ForecastsBox {
+    column-gap: 40px !important;
+  }
+  .HourlyForecast {
+  }
+  .HourlyForecast_item_header > p {
+    font-size: 16px !important;
+  }
+  .HourlyForecast_item_main_first > img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+@media (max-width: 1080px) {
+  .DateAndTimeInfoBox,
+  .ForecastsBox {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 30px;
+  }
+  .App {
+    height: auto !important;
+  }
+  .header_box {
+    display: none !important;
+  }
+  .aside_menu {
+    display: block !important;
+  }
+  .Header {
+    display: block !important;
+  }
+  .FindLocation {
+    padding: 0px 0px 0px 10px;
+  }
+}

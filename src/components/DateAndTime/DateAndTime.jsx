@@ -5,7 +5,6 @@ const DateAndTime = () => {
   const State = UseAppSelector((State) => State.Weather);
 
   const [Data, SetDate] = React.useState();
-  console.log(Data);
   const WeekDays = [
     "Sunday",
     "Monday",
@@ -29,7 +28,7 @@ const DateAndTime = () => {
             : "0" +
                 new Date().getHours() +
                 ":" +
-                (new Date().getUTCMinutes() > 10
+                (new Date().getUTCMinutes() >= 10
                   ? new Date().getUTCMinutes()
                   : "0" + new Date().getUTCMinutes())
         ),
@@ -38,7 +37,7 @@ const DateAndTime = () => {
     return () => {
       clearInterval(timer);
     };
-  }, {});
+  }, []);
 
   const Month = [
     "January",

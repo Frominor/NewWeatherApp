@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 10px;
 }
 .Humid {
-  padding-top: 35px;
+  padding: 25px 0px 16px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,13 +38,13 @@
   line-height: normal;
 }
 .Pressure {
-  padding-top: 13.05px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .hpa {
-  padding-top: 8px;
+  padding-top: 10px;
   color: var(--text-color);
   text-align: center;
   font-family: Poppins;
@@ -56,7 +55,7 @@
   line-height: normal;
 }
 .pressureP {
-  padding-top: 10px;
+  padding: 0px;
   margin: 0px;
   color: var(--text-color);
   text-align: center;
@@ -65,4 +64,9 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+.Humidity *,
+.Pressure * {
+  fill: var(--svg_fill_color);
 }

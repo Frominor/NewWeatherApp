@@ -2,18 +2,18 @@ import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { IWeather, State } from "../models/IWeather";
 
-export const fetchUserById = createAsyncThunk<
+export const GetWeather = createAsyncThunk<
   { city: { name: string }; list: IWeather[] },
   { State: State; isCurrent: Boolean }
 >("users/fetchById", async (Parametr) => {
   if (Parametr.isCurrent) {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${Parametr.State.CurrentWeather.lat}&lon=${Parametr.State.CurrentWeather.lon}&appid=9e2676b5d5179f93b75b68b95d3b7bf3`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${Parametr.State.CurrentWeather.lat}&lon=${Parametr.State.CurrentWeather.lon}&appid=${process.env.REACT_APP_API_KEY}`
     );
     return response.data;
   } else {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${Parametr.State.Lat}&lon=${Parametr.State.Lon}&appid=9e2676b5d5179f93b75b68b95d3b7bf3`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${Parametr.State.Lat}&lon=${Parametr.State.Lon}&appid=${process.env.REACT_APP_API_KEY}`
     );
     return response.data;
   }
@@ -22,15 +22,16 @@ export const FindCityCoords = createAsyncThunk(
   "weather/fetchByCityName",
   async (CityName: String) => {
     const response = await axios.get(
-      `https://api.openweathermap.org/geo/1.0/direct?q=${CityName}&limit=5&appid=9e2676b5d5179f93b75b68b95d3b7bf3`
+      `http://api.openweathermap.org/geo/1.0/direct?q=${CityName}&limit=5&appid=${process.env.REACT_APP_API_KEY}`
     );
     return response.data;
   }
 );
 
 const initialState: State = {
-  Lat: null,
-  Lon: null,
+  Lat: 37.9839412,
+  isLoading: false,
+  Lon: 23.7283052,
   themecolor: null,
   token: {},
   weather: null,
@@ -44,7 +45,7 @@ const initialState: State = {
   Error: null,
 };
 
-const UserSlice = createSlice({
+const WeatherSlice = createSlice({
   name: "Weather",
   initialState,
   reducers: {
@@ -61,9 +62,11 @@ const UserSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchUserById.pending, (state) => {})
+      .addCase(GetWeather.pending, (state) => {
+        state.isLoading = true;
+      })
       .addCase(
-        fetchUserById.fulfilled,
+        GetWeather.fulfilled,
         (
           state,
           action: PayloadAction<{
@@ -78,6 +81,7 @@ const UserSlice = createSlice({
           let boolean = false;
           state.Lat = null;
           state.Lon = null;
+          console.log(action.payload.city);
           state.City = action.payload.city.name;
           for (let i = 0; i < 8; i++) {
             if (
@@ -122,11 +126,13 @@ const UserSlice = createSlice({
           arr.push(zero);
           state.HourlyWeather = arr;
           state.Error = null;
+          state.isLoading = false;
         }
       )
-      .addCase(fetchUserById.rejected, (state, action) => {
+      .addCase(GetWeather.rejected, (state, action) => {
         state.Error =
           "Произошла ошибка на стороне сервера,попробуйте чуть позже";
+        state.isLoading = false;
       })
       .addCase(
         FindCityCoords.fulfilled,
@@ -137,9 +143,11 @@ const UserSlice = createSlice({
               country: String;
               lat: number;
               lon: number;
+              name: String;
             }[]
           >
         ) => {
+          console.log(action.payload);
           if (action.payload.length == 0) {
             state.Error = "Ошибка,проверьте название города";
           } else {
@@ -152,8 +160,9 @@ const UserSlice = createSlice({
       )
       .addCase(FindCityCoords.rejected, (state) => {
         state.Error = "Ошибка,проверьте название города";
+        state.isLoading = false;
       });
   },
 });
-export const { addWeather, getThemeColor } = UserSlice.actions;
-export const UserReducer = UserSlice.reducer;
+export const { addWeather, getThemeColor } = WeatherSlice.actions;
+export const UserReducer = WeatherSlice.reducer;

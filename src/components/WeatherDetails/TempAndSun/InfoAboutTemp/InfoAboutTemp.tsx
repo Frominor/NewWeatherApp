@@ -11,8 +11,10 @@ const InfoAboutTemp: React.FC = () => {
             {Math.round(State.weather.main.temp) - 273 + "°C"}
           </p>
           <p className="FeelsLike">
-            Feels like:{Math.round(State.weather.main.feels_like) - 273}
-            °C
+            Feels like:
+            {" " +
+              Number(Math.round(State.weather.main.feels_like) - 273) +
+              "°C"}
           </p>
         </div>
       ) : (

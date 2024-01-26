@@ -11,10 +11,12 @@ export interface IWeather {
   };
   weather: { main: String; description: String }[];
   wind: { speed: number; deg: number };
+  dt: string;
 }
 
 export interface State {
   Lat: number | null;
+  isLoading: boolean;
   Lon: number | null;
   themecolor: string | null;
   token: {};
