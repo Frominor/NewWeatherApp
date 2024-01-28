@@ -29,27 +29,7 @@ const FiveDForecastItem: React.FC<Props> = ({
   return (
     <div className="forecast_item" key={dt}>
       <div className="test">
-        <img
-          src={
-            weather[0].description == "overcast clouds"
-              ? clouds
-              : weather[0].description == "light snow"
-              ? sneg
-              : weather[0].description == "light rain"
-              ? drizzle
-              : weather[0].description == "broken clouds"
-              ? mist
-              : weather[0].description == "few clouds"
-              ? drizzle
-              : weather[0].description == "scattered clouds"
-              ? clouds
-              : weather[0].description == "snow"
-              ? sneg
-              : weather[0].description == "clear sky"
-              ? clear
-              : ""
-          }
-        ></img>
+        <img src={weather[0].icon}></img>
       </div>
       <p className="forecat_temp">{Math.round(main.feels_like - 273)}°C</p>
       <div className="forecast_date_box">

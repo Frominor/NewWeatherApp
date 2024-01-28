@@ -109,3 +109,16 @@ button > p {
   top: 5%;
   cursor: pointer;
 }
+.dadatArr {
+  position: absolute;
+  left: 2%;
+  width: 96%;
+}
+.dadatArr > li {
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+.dadatArr > li:hover {
+  cursor: pointer;
+  background-color: rgb(202, 195, 195);
+}

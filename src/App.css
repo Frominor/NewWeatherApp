@@ -4,3 +4,15 @@
   background: var(--background-color);
   height: 100vh;
 }
+img {
+  pointer-events: none;
+}
+.ErrorBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Error {
+  fill: var(--svg_fill_color);
+}

@@ -15,7 +15,8 @@ import {
   addWeather,
   GetWeather,
 } from "../../store/weatherSlice";
-
+import { HeadersDefaults } from "axios";
+import axios from "axios";
 const Header = () => {
   const dispatch = UseAppDispatch();
   const { theme, setTheme } = useTheme();
@@ -26,6 +27,8 @@ const Header = () => {
   const State = UseAppSelector((State) => State.Weather);
   console.log(State);
   const [City, SetCity] = React.useState("");
+  const [Dadat, SetDadat] = React.useState<{ value: string }[]>([]);
+  const [isFectingDadatas, SetIsFetchingDatas] = React.useState<boolean>(false);
   const [PhoneMenuActive, setPhoneMenuActive] = React.useState<boolean>();
   const getCurrentWeather = (): void => {
     dispatch(GetWeather({ State, isCurrent: true }));
@@ -40,6 +43,7 @@ const Header = () => {
     }
     navigator.geolocation.getCurrentPosition(success);
   }, []);
+
   React.useEffect(() => {
     if (Coords) {
       dispatch(addWeather(Coords));
@@ -52,9 +56,32 @@ const Header = () => {
     }, 300),
     []
   );
+
   React.useEffect(() => {
     dispatch(GetWeather({ State, isCurrent: false }));
   }, []);
+
+  React.useEffect(() => {
+    if (isFectingDadatas) {
+      axios
+        .post(
+          "http://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
+          { query: City },
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+              Authorization: "Token " + process.env.React_APP_API_DADATA_KEY,
+            },
+          }
+        )
+        .then((res) => {
+          let suggestions = res.data.suggestions;
+          SetDadat([...suggestions]);
+          console.log(res.data);
+        });
+    }
+  }, [City]);
   return (
     <header className="Header">
       <div className="container">
@@ -111,6 +138,9 @@ const Header = () => {
               value={City}
               placeholder="Search for your preffered city..."
               onChange={(e) => {
+                if (isFectingDadatas == false) {
+                  SetIsFetchingDatas(!isFectingDadatas);
+                }
                 SetCity(e.target.value);
                 if (e.target.value.length > 0) {
                   return makeRequest(e);
@@ -128,6 +158,26 @@ const Header = () => {
             >
               Find
             </button>
+            <ul className="dadatArr">
+              {Dadat.map((item) => {
+                return (
+                  <li
+                    onClick={() => {
+                      let index = item.value.indexOf("г");
+                      let city = item.value.split("г")[index + 1];
+                      city = city.trim();
+                      console.log(city.length);
+                      SetCity(city);
+
+                      SetIsFetchingDatas(false);
+                      SetDadat([]);
+                    }}
+                  >
+                    {item.value}
+                  </li>
+                );
+              })}
+            </ul>
           </div>
           <div className="Button">
             <button onClick={getCurrentWeather}>
@@ -137,18 +187,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-
-      <Alert
-        sx={{
-          position: "absolute",
-          bottom: 6,
-          left: 2 + "%",
-          opacity: `${State.Error ? 1 : 0}`,
-        }}
-        severity="error"
-      >
-        {State.Error}
-      </Alert>
     </header>
   );
 };

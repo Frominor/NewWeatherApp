@@ -31,36 +31,7 @@ const WeatherDetails: React.FC = () => {
           <TempAndSunInfo></TempAndSunInfo>
 
           <div className="imgTemperature">
-            <img
-              src={
-                State.FiveDForecast.length !== 0
-                  ? State?.FiveDForecast[0]?.weather[0].description ==
-                    "overcast clouds"
-                    ? clouds
-                    : State?.FiveDForecast[0]?.weather[0].description ==
-                      "light snow"
-                    ? sneg
-                    : State?.FiveDForecast[0]?.weather[0].description ==
-                      "light rain"
-                    ? drizzle
-                    : State?.FiveDForecast[0]?.weather[0].description ==
-                      "broken clouds"
-                    ? mist
-                    : State?.FiveDForecast[0]?.weather[0].description ==
-                      "few clouds"
-                    ? drizzle
-                    : State?.FiveDForecast[0]?.weather[0].description ==
-                      "scattered clouds"
-                    ? clouds
-                    : State?.FiveDForecast[0]?.weather[0].description == "snow"
-                    ? sneg
-                    : State?.FiveDForecast[0]?.weather[0].description ==
-                      "clear sky"
-                    ? clear
-                    : ""
-                  : ""
-              }
-            ></img>
+            <img src={State.FiveDForecast[1]?.weather[0]?.icon}></img>
             <p>
               {State?.FiveDForecast[0]?.weather[0].description.toUpperCase()}
             </p>

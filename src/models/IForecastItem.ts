@@ -1,8 +1,9 @@
 export interface Props {
   weather: {
-    description: String;
+    description: string;
+    icon: string;
   }[];
-  dt_txt: String;
+  dt_txt: string;
   main: {
     temp: number;
     feels_like: number;

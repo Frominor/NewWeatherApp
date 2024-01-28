@@ -33,27 +33,7 @@ export const HourlyForecastItem: React.FC<Props> = ({
       </div>
       <div className="HourlyForecast_item_main">
         <div className="HourlyForecast_item_main_first">
-          <img
-            src={
-              weather[0].description == "overcast clouds"
-                ? clouds
-                : weather[0].description == "light snow"
-                ? sneg
-                : weather[0].description == "light rain"
-                ? drizzle
-                : weather[0].description == "broken clouds"
-                ? mist
-                : weather[0].description == "few clouds"
-                ? drizzle
-                : weather[0].description == "scattered clouds"
-                ? clouds
-                : weather[0].description == "snow"
-                ? sneg
-                : weather[0].description == "clear sky"
-                ? clear
-                : ""
-            }
-          ></img>
+          <img src={weather[0].icon}></img>
           <p>{Math.floor(main.temp - 273)}°C</p>
         </div>
         <div className="HourlyForecast_item_main_second">

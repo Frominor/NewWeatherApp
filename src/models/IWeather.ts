@@ -2,14 +2,14 @@ export interface IWeather {
   clouds: {
     all: number;
   };
-  dt_txt: String;
+  dt_txt: string;
   main: {
     temp: number;
     feels_like: number;
     humidity: number;
     pressure: number;
   };
-  weather: { main: String; description: String }[];
+  weather: { main: string; description: string; icon: string }[];
   wind: { speed: number; deg: number };
   dt: string;
 }
@@ -27,6 +27,6 @@ export interface State {
     lat: number | null;
     lon: number | null;
   };
-  City: String;
-  Error: String | null;
+  City: string;
+  Error: string | null;
 }

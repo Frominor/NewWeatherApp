@@ -1,7 +1,12 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import { IWeather, State } from "../models/IWeather";
-
+import clouds from "../imgs/clouds 1.png";
+import sneg from "../imgs/rain 1.png";
+import drizzle from "../imgs/drizzle 1.png";
+import clear from "../imgs/clear 2.png";
+import mist from "../imgs/mist 1.png";
+import sun from "../imgs/sun.png";
 export const GetWeather = createAsyncThunk<
   { city: { name: string }; list: IWeather[] },
   { State: State; isCurrent: Boolean }
@@ -78,10 +83,11 @@ const WeatherSlice = createSlice({
         ) => {
           let arr = [];
           state.FiveDForecast = [];
+
           let boolean = false;
           state.Lat = null;
           state.Lon = null;
-          console.log(action.payload.city);
+          console.log(action.payload);
           state.City = action.payload.city.name;
           for (let i = 0; i < 8; i++) {
             if (
@@ -125,6 +131,66 @@ const WeatherSlice = createSlice({
           arr.splice(0, 1);
           arr.push(zero);
           state.HourlyWeather = arr;
+          for (let k of state.FiveDForecast) {
+            switch (k.weather[0].description) {
+              case "light rain":
+                k.weather[0].icon = drizzle;
+                break;
+              case "overcast clouds":
+                k.weather[0].icon = clouds;
+                break;
+              case "light snow":
+                k.weather[0].icon = mist;
+                break;
+              case "broken clouds":
+                k.weather[0].icon = mist;
+                break;
+              case "few clouds":
+                k.weather[0].icon = drizzle;
+                break;
+              case "scattered clouds":
+                k.weather[0].icon = clouds;
+                break;
+              case "snow":
+                k.weather[0].icon = sneg;
+                break;
+              case "clear sky":
+                k.weather[0].icon = clear;
+                break;
+              default:
+                break;
+            }
+          }
+          for (let k of state.HourlyWeather) {
+            switch (k.weather[0].description) {
+              case "light rain":
+                k.weather[0].icon = drizzle;
+                break;
+              case "overcast clouds":
+                k.weather[0].icon = clouds;
+                break;
+              case "light snow":
+                k.weather[0].icon = mist;
+                break;
+              case "broken clouds":
+                k.weather[0].icon = mist;
+                break;
+              case "few clouds":
+                k.weather[0].icon = drizzle;
+                break;
+              case "scattered clouds":
+                k.weather[0].icon = clouds;
+                break;
+              case "snow":
+                k.weather[0].icon = sneg;
+                break;
+              case "clear sky":
+                k.weather[0].icon = clear;
+                break;
+              default:
+                break;
+            }
+          }
           state.Error = null;
           state.isLoading = false;
         }
