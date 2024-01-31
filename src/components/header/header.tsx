@@ -28,6 +28,7 @@ const Header = () => {
   } | null>(null);
   const State = UseAppSelector((State) => State.Weather);
   console.log(State);
+
   const [City, SetCity] = React.useState("");
   const [Dadat, SetDadat] = React.useState<{ value: string }[]>([]);
   const [isFectingDadatas, SetIsFetchingDatas] = React.useState<boolean>(false);
@@ -45,7 +46,7 @@ const Header = () => {
     }
     navigator.geolocation.getCurrentPosition(success);
   }, []);
-
+  console.log(City);
   React.useEffect(() => {
     if (Coords) {
       dispatch(addWeather(Coords));
@@ -69,7 +70,7 @@ const Header = () => {
     if (isFectingDadatas) {
       axios
         .post(
-          "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
+          "http://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
           { query: City },
           {
             headers: {
@@ -80,9 +81,19 @@ const Header = () => {
           }
         )
         .then((res) => {
+          console.log(res.data.suggestions);
           let suggestions = res.data.suggestions;
-          SetDadat([...suggestions]);
-          console.log(res.data);
+          let filteredsuggestions = suggestions.filter(
+            (item: { value: string }) => {
+              if (item.value.split(" ").includes("г")) {
+                return true;
+              } else {
+                return false;
+              }
+            }
+          );
+          console.log(filteredsuggestions);
+          SetDadat([...filteredsuggestions]);
         });
     }
   }, [City]);
@@ -193,12 +204,16 @@ const Header = () => {
                 return (
                   <li
                     onClick={() => {
-                      let index = item.value.indexOf("г");
-                      let city = item.value.split("г")[index + 1];
-                      city = city.trim();
-                      console.log(city.length);
-                      SetCity(city);
+                      console.log(item.value);
 
+                      let arr = item.value.split(" ");
+                      let index = arr.indexOf("г");
+                      let city = arr[index + 1];
+                      console.log(city);
+                      city = city.trim();
+
+                      SetCity(city);
+                      dispatch(FindCityCoords(city));
                       SetIsFetchingDatas(false);
                       SetDadat([]);
                     }}
