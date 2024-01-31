@@ -140,3 +140,6 @@ button > p {
 .curr_weath_box {
   background-color: var(--right_side_menu_background);
 }
+.Menu_button * {
+  fill: var(--bacground-color-item);
+}
