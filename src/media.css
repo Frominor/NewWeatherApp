@@ -36,6 +36,8 @@
   }
   .imgTemperature > p {
     padding-left: 0px !important;
+    font-size: 22px !important;
+    padding-top: 50px !important;
   }
   .Temp {
     font-size: 60px !important;
@@ -56,7 +58,7 @@
 }
 @media (max-width: 1150px) {
   .FindLocation {
-    min-width: 700px !important;
+    width: 700px !important;
   }
   .Button > button {
     width: 170px !important;
@@ -102,5 +104,11 @@
   }
   .FindLocation {
     padding: 0px 0px 0px 10px;
+    min-width: 500px !important;
+  }
+}
+@media (max-width: 810px) {
+  .FindLocation {
+    width: 500px !important;
   }
 }

@@ -121,6 +121,7 @@ html[data-theme="dark"] {
     #fff -16.56%,
     rgba(255, 255, 255, 0) 118.43%
   );
+  --right_side_menu_background: #ffffff;
   --feels_like_color: rgba(255, 255, 255, 0.8);
   --bacground-color-item: #444;
   --bacground-forecast_item: #373636;
@@ -139,6 +140,7 @@ html[data-theme="light"] {
   );
   --feels_like_color: #292929;
   --bacground-color-item: #d9d9d9;
+  --right_side_menu_background: black;
   --bacground-forecast_item: linear-gradient(
     169deg,
     #f88508 -15.98%,

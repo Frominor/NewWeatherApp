@@ -3,6 +3,7 @@
 .App {
   background: var(--background-color);
   height: 100vh;
+  position: relative;
 }
 img {
   pointer-events: none;

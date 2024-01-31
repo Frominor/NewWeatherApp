@@ -16,6 +16,8 @@ header {
   padding: 15px 0px 0px 20px;
 }
 .open {
+  position: relative;
+  z-index: 101;
   padding: 15px 20px 0px 0px;
 }
 .FindLocation {
@@ -77,9 +79,6 @@ input::placeholder {
   justify-content: space-evenly;
   color: var(--text-color);
 }
-.geoposition {
-  margin-left: 5px;
-}
 
 button > p {
   color: var(--text-color);
@@ -103,7 +102,7 @@ button > p {
   font-style: normal;
   margin-right: 10px;
   font-weight: 600;
-  z-index: 2000;
+  z-index: 2;
   line-height: normal;
   right: -0.5%;
   top: 5%;
@@ -121,4 +120,23 @@ button > p {
 .dadatArr > li:hover {
   cursor: pointer;
   background-color: rgb(202, 195, 195);
+}
+.right_side_menu {
+  position: absolute;
+  background-color: var(--right_side_menu_background);
+  color: var(--text-color);
+  right: 0;
+  z-index: 100;
+  width: 110px;
+  height: 100%;
+}
+.right_side_menu_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+  row-gap: 20px;
+}
+.curr_weath_box {
+  background-color: var(--right_side_menu_background);
 }

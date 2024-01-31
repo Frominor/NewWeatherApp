@@ -6,6 +6,7 @@ import location from "../../imgs/current location icon.png";
 import Switch from "@mui/material/Switch";
 import Alert from "@mui/material/Alert";
 import { useTheme } from "./../../hooks/useTheme";
+
 //@ts-ignore
 import { debounce } from "lodash-es";
 import { ReactComponent as Menu } from "./menu-svgrepo-com.svg";
@@ -17,6 +18,7 @@ import {
 } from "../../store/weatherSlice";
 import { HeadersDefaults } from "axios";
 import axios from "axios";
+import { FormControl } from "@mui/material";
 const Header = () => {
   const dispatch = UseAppDispatch();
   const { theme, setTheme } = useTheme();
@@ -29,7 +31,7 @@ const Header = () => {
   const [City, SetCity] = React.useState("");
   const [Dadat, SetDadat] = React.useState<{ value: string }[]>([]);
   const [isFectingDadatas, SetIsFetchingDatas] = React.useState<boolean>(false);
-  const [PhoneMenuActive, setPhoneMenuActive] = React.useState<boolean>();
+  const [PhoneMenuActive, setPhoneMenuActive] = React.useState<boolean>(false);
   const getCurrentWeather = (): void => {
     dispatch(GetWeather({ State, isCurrent: true }));
   };
@@ -52,7 +54,9 @@ const Header = () => {
   React.useEffect(() => {});
   const makeRequest = React.useCallback(
     debounce((e: React.ChangeEvent<HTMLInputElement>) => {
-      dispatch(FindCityCoords(e.target.value));
+      if (e.target.value.length > 2) {
+        dispatch(FindCityCoords(e.target.value));
+      }
     }, 300),
     []
   );
@@ -85,6 +89,33 @@ const Header = () => {
   return (
     <header className="Header">
       <div className="container">
+        <div
+          className="right_side_menu"
+          style={{ opacity: PhoneMenuActive ? "1" : "0" }}
+        >
+          <div className="right_side_menu_box">
+            <div className="curr_weath_box">
+              {" "}
+              <button onClick={getCurrentWeather}>
+                <img src={location} className="geoposition"></img>
+              </button>
+            </div>
+            <div>
+              {" "}
+              <Switch
+                defaultValue={"dark"}
+                onChange={() => {
+                  if (theme == "dark") {
+                    setTheme("light");
+                  } else {
+                    setTheme("dark");
+                  }
+                }}
+                sx={{ color: " var(--right_side_menu_background)" }}
+              />
+            </div>
+          </div>
+        </div>
         <div className="aside_menu">
           <div className="aside_menu_box">
             <div className="FindLocation">
@@ -116,23 +147,22 @@ const Header = () => {
           </div>
         </div>
         <div className="header_box">
-          <div>
-            <FormGroup>
-              <FormControlLabel
-                control={<Switch />}
-                label="Theme"
-                defaultValue={"dark"}
-                onChange={() => {
-                  if (theme == "dark") {
-                    setTheme("light");
-                  } else {
-                    setTheme("dark");
-                  }
-                }}
-                sx={{ color: " var(--text-color)" }}
-              />
-            </FormGroup>
-          </div>
+          <FormGroup>
+            <FormControlLabel
+              control={<Switch />}
+              label="Theme"
+              defaultValue={"dark"}
+              onChange={() => {
+                if (theme == "dark") {
+                  setTheme("light");
+                } else {
+                  setTheme("dark");
+                }
+              }}
+              sx={{ color: " var(--text-color)" }}
+            />
+          </FormGroup>
+
           <div className="FindLocation">
             <input
               value={City}
