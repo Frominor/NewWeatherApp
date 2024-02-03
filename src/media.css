@@ -1,6 +1,5 @@
 @media (max-width: 1350px) {
   .WeatherDetails {
-    width: 680px !important;
   }
   .imgTemperature > img {
     height: 230px !important;
@@ -20,13 +19,11 @@
     column-gap: 10px !important;
   }
   .HourlyForecast {
-    width: 550px !important;
   }
   .HourlyForecast_item {
     width: 90px !important;
   }
   .WeatherDetails {
-    width: 550px !important;
   }
   .TemperaturaAndInfoAboutSun {
     margin: 20px 0px 2px 2px !important;
