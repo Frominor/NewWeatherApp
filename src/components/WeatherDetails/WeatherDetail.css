@@ -2,7 +2,8 @@
   width: 780px;
   height: 330px;
   display: flex;
-
+  flex-grow: 1;
+  justify-content: space-around;
   flex-shrink: 0;
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.5);
   border-radius: 30px;
@@ -13,6 +14,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 0px 10px 0px 10px;
   row-gap: 30px;
 }
 

@@ -9,6 +9,7 @@ header {
 }
 .aside_menu_box {
   display: flex;
+  padding-top: 10px;
   justify-content: space-between;
   align-items: center;
 }
@@ -16,13 +17,16 @@ header {
   padding: 15px 0px 0px 20px;
 }
 .open {
+  width: 90px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 101;
-  padding: 15px 20px 0px 0px;
 }
 .FindLocation {
   position: relative;
-  min-width: 803px;
+  width: 803px;
   height: 50px;
 }
 input {
@@ -141,5 +145,7 @@ button > p {
   background-color: var(--right_side_menu_background);
 }
 .Menu_button * {
+  width: 50px;
+  height: 50px;
   fill: var(--bacground-color-item);
 }

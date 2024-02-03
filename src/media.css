@@ -84,14 +84,27 @@
   }
 }
 @media (max-width: 1080px) {
+  .FiveDForecast {
+    flex-grow: 1;
+  }
+  .App {
+    height: auto !important;
+  }
+  .forecast_item {
+    width: auto !important;
+  }
+  .DateAndTimeInfo {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+  }
   .DateAndTimeInfoBox,
   .ForecastsBox {
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 30px;
   }
-  .App {
-    height: auto !important;
+  .FindLocation {
   }
   .header_box {
     display: none !important;
@@ -104,11 +117,5 @@
   }
   .FindLocation {
     padding: 0px 0px 0px 10px;
-    min-width: 500px !important;
-  }
-}
-@media (max-width: 810px) {
-  .FindLocation {
-    width: 500px !important;
   }
 }
