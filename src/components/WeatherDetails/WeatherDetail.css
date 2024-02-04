@@ -3,7 +3,7 @@
   display: flex;
   flex-grow: 1;
   justify-content: space-around;
-  flex-shrink: 0;
+
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.5);
   border-radius: 30px;
   background: var(--bacground-color-item);
@@ -30,7 +30,7 @@
   color: var(--text-color);
   text-align: center;
   font-family: Poppins;
-  font-size: 32px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 600;
   padding-left: 10px;
