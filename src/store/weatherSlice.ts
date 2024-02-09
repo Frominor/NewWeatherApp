@@ -10,7 +10,7 @@ import sun from "../imgs/sun.png";
 export const GetWeather = createAsyncThunk<
   { city: { name: string }; list: IWeather[] },
   { State: State; isCurrent: Boolean }
->("users/fetchById", async (Parametr) => {
+>("weather/fetchWeather", async (Parametr) => {
   if (Parametr.isCurrent) {
     const response = await axios.get(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${Parametr.State.CurrentWeather.lat}&lon=${Parametr.State.CurrentWeather.lon}&appid=${process.env.REACT_APP_API_KEY}`
@@ -26,7 +26,6 @@ export const GetWeather = createAsyncThunk<
 export const FindCityCoords = createAsyncThunk(
   "weather/fetchByCityName",
   async (CityName: String) => {
-    console.log(CityName);
     const response = await axios.get(
       `http://api.openweathermap.org/geo/1.0/direct?q=${CityName}&limit=5&appid=${process.env.REACT_APP_API_KEY}`
     );
@@ -38,8 +37,6 @@ const initialState: State = {
   Lat: 37.9839412,
   isLoading: false,
   Lon: 23.7283052,
-  themecolor: null,
-  token: {},
   weather: null,
   FiveDForecast: [],
   HourlyWeather: [],
@@ -61,9 +58,6 @@ const WeatherSlice = createSlice({
     ) {
       state.CurrentWeather.lat = action.payload?.latitude;
       state.CurrentWeather.lon = action.payload?.longitude;
-    },
-    getThemeColor(state, action: PayloadAction<string>) {
-      state.themecolor = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -88,7 +82,6 @@ const WeatherSlice = createSlice({
           let boolean = false;
           state.Lat = null;
           state.Lon = null;
-          console.log(action.payload);
           state.City = action.payload.city.name;
           for (let i = 0; i < 8; i++) {
             if (
@@ -214,7 +207,6 @@ const WeatherSlice = createSlice({
             }[]
           >
         ) => {
-          console.log(action.payload);
           if (action.payload.length == 0) {
             state.Error = "Ошибка,проверьте название города";
           } else {
@@ -231,5 +223,5 @@ const WeatherSlice = createSlice({
       });
   },
 });
-export const { addWeather, getThemeColor } = WeatherSlice.actions;
+export const { addWeather } = WeatherSlice.actions;
 export const UserReducer = WeatherSlice.reducer;

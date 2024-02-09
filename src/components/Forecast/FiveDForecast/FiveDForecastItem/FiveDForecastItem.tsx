@@ -1,10 +1,6 @@
 import React from "react";
 import { Props } from "../../../../models/IForecastItem";
-import clouds from "../../../../imgs/clouds 1.png";
-import sneg from "../../../../imgs/rain 1.png";
-import drizzle from "../../../../imgs/drizzle 1.png";
-import clear from "../../../../imgs/clear 2.png";
-import mist from "../../../../imgs/mist 1.png";
+
 const FiveDForecastItem: React.FC<Props> = ({
   weather,
   dt_txt,

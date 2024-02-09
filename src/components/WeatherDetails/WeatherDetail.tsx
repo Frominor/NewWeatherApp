@@ -17,9 +17,11 @@ const WeatherDetails: React.FC = () => {
       {State.isLoading ? (
         <Container
           sx={{
-            width: 100 + "%",
+            width: 600 + "px",
+
             height: 100 + "%",
             display: "flex",
+            flexGrow: 1,
             justifyContent: "center",
             alignItems: "center",
           }}

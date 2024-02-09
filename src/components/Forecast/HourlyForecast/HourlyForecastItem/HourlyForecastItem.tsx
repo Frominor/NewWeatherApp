@@ -1,10 +1,5 @@
 import React from "react";
 import navigation from "../../../../imgs/navigation 1.png";
-import clouds from "../../../../imgs/clouds 1.png";
-import sneg from "../../../../imgs/rain 1.png";
-import drizzle from "../../../../imgs/drizzle 1.png";
-import clear from "../../../../imgs/clear 2.png";
-import mist from "../../../../imgs/mist 1.png";
 import { Props } from "../../../../models/IForecastItem";
 import "./HourlyForecastItem.css";
 export const HourlyForecastItem: React.FC<Props> = ({

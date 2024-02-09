@@ -6,7 +6,6 @@ import "./InfoAboutSunRise.css";
 import { UseAppSelector } from "../../../../typedhooks";
 const InfoAboutSunRise = () => {
   const State = UseAppSelector((State) => State.Weather);
-  console.log(State.themecolor);
   return (
     <div className="InfoAboutSunRise">
       <div className="sunrise">

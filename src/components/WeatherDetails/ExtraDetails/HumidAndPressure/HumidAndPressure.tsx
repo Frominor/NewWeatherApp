@@ -1,5 +1,4 @@
 import React from "react";
-import pressure from "../../../../imgs/pressure-white 1.png";
 import "./HumidAndPressure.css";
 import { UseAppSelector } from "../../../../typedhooks";
 import { ReactComponent as Humidity } from "./humidity-svgrepo-com.svg";

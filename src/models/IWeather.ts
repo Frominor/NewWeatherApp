@@ -18,8 +18,6 @@ export interface State {
   Lat: number | null;
   isLoading: boolean;
   Lon: number | null;
-  themecolor: string | null;
-  token: {};
   weather: IWeather | null;
   FiveDForecast: IWeather[];
   HourlyWeather: IWeather[];

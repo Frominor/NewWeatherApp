@@ -17,6 +17,7 @@
 }
 .FeelsLike {
   flex-shrink: 0;
+  display: flex;
   width: 100%;
   text-align: start;
   color: var(--feels_like_color);

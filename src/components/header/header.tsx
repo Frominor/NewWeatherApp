@@ -27,7 +27,6 @@ const Header = () => {
     longitude: number;
   } | null>(null);
   const State = UseAppSelector((State) => State.Weather);
-  console.log(State);
 
   const [City, SetCity] = React.useState("");
   const [Dadat, SetDadat] = React.useState<{ value: string }[]>([]);
@@ -45,14 +44,14 @@ const Header = () => {
       SetCoords(crd);
     }
     navigator.geolocation.getCurrentPosition(success);
+    dispatch(GetWeather({ State, isCurrent: false }));
   }, []);
-  console.log(City);
+
   React.useEffect(() => {
     if (Coords) {
       dispatch(addWeather(Coords));
     }
   }, [Coords]);
-  React.useEffect(() => {});
   const makeRequest = React.useCallback(
     debounce((e: React.ChangeEvent<HTMLInputElement>) => {
       if (e.target.value.length > 2) {
@@ -61,10 +60,6 @@ const Header = () => {
     }, 300),
     []
   );
-
-  React.useEffect(() => {
-    dispatch(GetWeather({ State, isCurrent: false }));
-  }, []);
 
   React.useEffect(() => {
     if (isFectingDadatas) {
@@ -81,18 +76,14 @@ const Header = () => {
           }
         )
         .then((res) => {
-          console.log(res.data.suggestions);
-          let suggestions = res.data.suggestions;
-          let filteredsuggestions = suggestions.filter(
+          let filteredsuggestions = res.data.suggestions.filter(
             (item: { value: string }) => {
               if (item.value.split(" ").includes("г")) {
                 return true;
-              } else {
-                return false;
               }
+              return false;
             }
           );
-          console.log(filteredsuggestions);
           SetDadat([...filteredsuggestions]);
         });
     }
@@ -106,13 +97,11 @@ const Header = () => {
         >
           <div className="right_side_menu_box">
             <div className="curr_weath_box">
-              {" "}
               <button onClick={getCurrentWeather}>
                 <img src={location} className="geoposition"></img>
               </button>
             </div>
             <div>
-              {" "}
               <Switch
                 defaultValue={"dark"}
                 onChange={() => {
@@ -204,14 +193,8 @@ const Header = () => {
                 return (
                   <li
                     onClick={() => {
-                      console.log(item.value);
-
                       let arr = item.value.split(" ");
-                      let index = arr.indexOf("г");
-                      let city = arr[index + 1];
-                      console.log(city);
-                      city = city.trim();
-
+                      let city = arr[arr.indexOf("г") + 1].trim();
                       SetCity(city);
                       dispatch(FindCityCoords(city));
                       SetIsFetchingDatas(false);

@@ -27,7 +27,6 @@ const HourlyForecast = () => {
         </Container>
       ) : (
         <div className="HourlyForecast_Box">
-          {" "}
           {State.HourlyWeather.map((item: IWeather, key) => {
             return (
               <HourlyForecastItem
