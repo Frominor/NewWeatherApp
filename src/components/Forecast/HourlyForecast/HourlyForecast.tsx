@@ -2,9 +2,9 @@ import React from "react";
 
 import "./HourlyForecast.css";
 
-import { UseAppSelector } from "../../../typedhooks";
+import { UseAppSelector } from "../../../hooks/typedhooks";
 import { HourlyForecastItem } from "./HourlyForecastItem/HourlyForecastItem";
-import { IWeather } from "../../../models/IWeather";
+import { IWeather } from "../../../types/IWeather";
 import { CircularProgress, Container } from "@mui/material";
 const HourlyForecast = () => {
   const State = UseAppSelector((State) => State.Weather);

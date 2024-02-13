@@ -1,7 +1,7 @@
 import React from "react";
 import Uv from "../../../../imgs/uv-white 1.png";
 import "./WindAndUv.css";
-import { UseAppSelector } from "../../../../typedhooks";
+import { UseAppSelector } from "../../../../hooks/typedhooks";
 import { ReactComponent as Wind } from "./wind-svgrepo-com.svg";
 import { ReactComponent as UV } from "./uv-index-alt-svgrepo-com.svg";
 const WindAndUv: React.FC = () => {

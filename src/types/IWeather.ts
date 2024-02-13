@@ -7,6 +7,7 @@ export interface IWeather {
     temp: number;
     feels_like: number;
     humidity: number;
+    icon: string | null;
     pressure: number;
   };
   weather: { main: string; description: string; icon: string }[];

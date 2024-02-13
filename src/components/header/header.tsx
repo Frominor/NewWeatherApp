@@ -5,17 +5,17 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import location from "../../imgs/current location icon.png";
 import Switch from "@mui/material/Switch";
 import Alert from "@mui/material/Alert";
-import { useTheme } from "./../../hooks/useTheme";
+import { useTheme } from "../../hooks/useTheme";
 
 //@ts-ignore
 import { debounce } from "lodash-es";
 import { ReactComponent as Menu } from "./menu-svgrepo-com.svg";
-import { UseAppDispatch, UseAppSelector } from "../../typedhooks";
+import { UseAppDispatch, UseAppSelector } from "../../hooks/typedhooks";
 import {
   FindCityCoords,
   addWeather,
   GetWeather,
-} from "../../store/weatherSlice";
+} from "./../../store/weatherSlice";
 import { HeadersDefaults } from "axios";
 import axios from "axios";
 import { FormControl } from "@mui/material";

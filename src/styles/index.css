@@ -1,0 +1,42 @@
+html[data-theme="dark"] {
+  --input-text-color: rgba(255, 255, 255, 0.6);
+  --background-color: linear-gradient(
+    117deg,
+    rgba(46, 44, 44, 1) 52%,
+    rgba(8, 5, 5, 1) 83%
+  );
+  --svg_fill_color: white;
+  --text-color: white;
+  --rgb-text-color: linear-gradient(
+    84deg,
+    #fff -16.56%,
+    rgba(255, 255, 255, 0) 118.43%
+  );
+  --right_side_menu_background: #ffffff;
+  --feels_like_color: rgba(255, 255, 255, 0.8);
+  --bacground-color-item: #444;
+  --bacground-forecast_item: #373636;
+}
+html[data-theme="light"] {
+  --background-color: linear-gradient(
+    113deg,
+    #fff 0.28%,
+    rgba(70, 97, 115, 0) 178.65%
+  );
+  --text-color: #292929;
+  --rgb-text-color: linear-gradient(
+    80deg,
+    #292929 -2.93%,
+    rgba(255, 255, 255, 0) 212.44%
+  );
+  --feels_like_color: #292929;
+  --bacground-color-item: #d9d9d9;
+  --right_side_menu_background: black;
+  --bacground-forecast_item: linear-gradient(
+    169deg,
+    #f88508 -15.98%,
+    rgba(246, 250, 217, 0) 150.58%
+  );
+  --svg_fill_color: black;
+  --input-text-color: rgba(10, 3, 3, 0.6);
+}

@@ -1,8 +1,8 @@
 import React from "react";
-import "./App.css";
+import "./styles/App.css";
 import { Header } from "./components/header/header";
 import { Main } from "./components/main/main";
-import { UseAppSelector } from "./typedhooks";
+import { UseAppSelector } from "./hooks/typedhooks";
 import { ReactComponent as Error } from "./imgs/error-sing-svgrepo-com.svg";
 const App: React.FC = () => {
   const State = UseAppSelector((State) => State.Weather);

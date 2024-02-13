@@ -1,6 +1,6 @@
 import React from "react";
 import "./InfoAboutTemp.css";
-import { UseAppSelector } from "../../../../typedhooks";
+import { UseAppSelector } from "../../../../hooks/typedhooks";
 const InfoAboutTemp: React.FC = () => {
   const State = UseAppSelector((State) => State.Weather);
   return (

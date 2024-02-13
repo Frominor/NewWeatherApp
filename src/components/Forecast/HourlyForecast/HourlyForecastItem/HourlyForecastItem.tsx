@@ -1,6 +1,6 @@
 import React from "react";
 import navigation from "../../../../imgs/navigation 1.png";
-import { Props } from "../../../../models/IForecastItem";
+import { Props } from "../../../../types/IForecastItem";
 import "./HourlyForecastItem.css";
 export const HourlyForecastItem: React.FC<Props> = ({
   dt_txt,

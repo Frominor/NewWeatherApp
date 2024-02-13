@@ -1,5 +1,5 @@
 import React from "react";
-import { Props } from "../../../../models/IForecastItem";
+import { Props } from "../../../../types/IForecastItem";
 
 const FiveDForecastItem: React.FC<Props> = ({
   weather,

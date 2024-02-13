@@ -8,7 +8,7 @@ import sun from "../../imgs/sun.png";
 import "./WeatherDetail.css";
 import { ExtraDetails } from "./ExtraDetails/ExtraDetails";
 import { TempAndSunInfo } from "./TempAndSun/TempAndSunInfo";
-import { UseAppSelector } from "../../typedhooks";
+import { UseAppSelector } from "../../hooks/typedhooks";
 import { Container, CircularProgress } from "@mui/material";
 const WeatherDetails: React.FC = () => {
   const State = UseAppSelector((State) => State.Weather);
