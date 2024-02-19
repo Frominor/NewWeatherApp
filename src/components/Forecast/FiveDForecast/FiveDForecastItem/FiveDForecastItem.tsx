@@ -1,27 +1,20 @@
-import React from "react";
+import React, { memo } from "react";
 import { Props } from "../../../../types/IForecastItem";
-
-const FiveDForecastItem: React.FC<Props> = ({
-  weather,
-  dt_txt,
-  dt,
-
-  main,
-}) => {
-  const Months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "June",
-    "July",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
+const Months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "June",
+  "July",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+const FiveDForecastItem: React.FC<Props> = ({ weather, dt_txt, dt, main }) => {
   return (
     <div className="forecast_item" key={dt}>
       <div className="test">
@@ -44,4 +37,4 @@ const FiveDForecastItem: React.FC<Props> = ({
     </div>
   );
 };
-export { FiveDForecastItem };
+export default memo(FiveDForecastItem);

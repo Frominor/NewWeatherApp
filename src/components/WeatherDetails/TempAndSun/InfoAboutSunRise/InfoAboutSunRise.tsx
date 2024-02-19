@@ -4,8 +4,9 @@ import { ReactComponent as Sunset } from "./sunset.svg";
 import { ReactComponent as Sunrise } from "./sunrise.svg";
 import "./InfoAboutSunRise.css";
 import { UseAppSelector } from "../../../../hooks/typedhooks";
-const InfoAboutSunRise = () => {
-  const State = UseAppSelector((State) => State.Weather);
+
+const InfoAboutSunRise: React.FC = () => {
+  const State = UseAppSelector((State: any) => State.Weather);
   return (
     <div className="InfoAboutSunRise">
       <div className="sunrise">

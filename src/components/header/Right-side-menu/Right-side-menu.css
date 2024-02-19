@@ -1,0 +1,24 @@
+.right_side_menu {
+  position: absolute;
+  background-color: var(--right_side_menu_background);
+  color: var(--text-color);
+  right: 0;
+  z-index: 100;
+  width: 110px;
+  height: 100%;
+}
+.right_side_menu_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+  row-gap: 20px;
+}
+.curr_weath_box {
+  background-color: var(--right_side_menu_background);
+}
+.Menu_button * {
+  width: 50px;
+  height: 50px;
+  fill: var(--bacground-color-item);
+}

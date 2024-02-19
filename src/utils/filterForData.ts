@@ -44,5 +44,6 @@ export const FilterWeatherForData = (list: IWeather[], state: State) => {
   }
   state.Error = null;
   state.isLoading = false;
+
   return arr;
 };

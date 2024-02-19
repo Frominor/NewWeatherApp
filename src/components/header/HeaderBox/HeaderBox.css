@@ -1,0 +1,21 @@
+.header_box {
+  display: flex;
+  column-gap: 90px;
+  padding-top: 50px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.dadatArr {
+  position: absolute;
+  left: 2%;
+  width: 96%;
+}
+.dadatArr > li {
+  background-color: white;
+  border-bottom: 1px solid black;
+}
+.dadatArr > li:hover {
+  cursor: pointer;
+  background-color: rgb(202, 195, 195);
+}

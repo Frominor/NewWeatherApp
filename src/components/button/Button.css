@@ -1,0 +1,42 @@
+.Find {
+  position: absolute;
+  width: 90px;
+  height: 45px;
+  background-color: lightcoral;
+  border-radius: 20px;
+  color: var(--text-color);
+  text-align: center;
+  font-family: Poppins;
+  font-style: normal;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  z-index: 2;
+  line-height: normal;
+  right: -0.5%;
+  top: 5%;
+  cursor: pointer;
+}
+.currentLocation {
+  width: 200px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 40px;
+  background: #4cbb17;
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: var(--text-color);
+}
+.currentLocation > p {
+  color: var(--text-color);
+  text-align: center;
+  font-family: Poppins;
+  font-style: normal;
+  margin-right: 10px;
+  font-weight: 600;
+  line-height: normal;
+}

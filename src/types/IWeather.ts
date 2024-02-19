@@ -10,7 +10,12 @@ export interface IWeather {
     icon: string | null;
     pressure: number;
   };
-  weather: { main: string; description: string; icon: string }[];
+  weather: {
+    main: string;
+    description: string;
+    icon: string;
+    sys: { sunrise: number | string };
+  }[];
   wind: { speed: number; deg: number };
   dt: string;
 }
@@ -20,8 +25,8 @@ export interface State {
   isLoading: boolean;
   Lon: number | null;
   weather: IWeather | null;
-  FiveDForecast: IWeather[];
-  HourlyWeather: IWeather[];
+  FiveDForecast: IWeather[] | null;
+  HourlyWeather: IWeather[] | null;
   CurrentWeather: {
     lat: number | null;
     lon: number | null;

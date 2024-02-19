@@ -1,5 +1,8 @@
 .InfoAboutTemp {
   padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .Temp {
   text-align: center;

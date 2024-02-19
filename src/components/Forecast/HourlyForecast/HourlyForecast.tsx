@@ -1,14 +1,14 @@
 import React from "react";
 
-import "./HourlyForecast.css";
-
 import { UseAppSelector } from "../../../hooks/typedhooks";
-import { HourlyForecastItem } from "./HourlyForecastItem/HourlyForecastItem";
+import HourlyForecastItem from "./HourlyForecastItem/HourlyForecastItem";
 import { IWeather } from "../../../types/IWeather";
+
 import { CircularProgress, Container } from "@mui/material";
+
+import "./HourlyForecast.css";
 const HourlyForecast = () => {
   const State = UseAppSelector((State) => State.Weather);
-
   return (
     <div className="HourlyForecast">
       <p className="HourlyForTitle">Hourly Forecast:</p>
@@ -27,17 +27,18 @@ const HourlyForecast = () => {
         </Container>
       ) : (
         <div className="HourlyForecast_Box">
-          {State.HourlyWeather.map((item: IWeather, key) => {
-            return (
-              <HourlyForecastItem
-                dt={item.dt}
-                weather={item.weather}
-                dt_txt={item.dt_txt}
-                wind={item.wind}
-                main={item.main}
-              ></HourlyForecastItem>
-            );
-          })}
+          {State.HourlyWeather &&
+            State.HourlyWeather.map((item: IWeather, key) => {
+              return (
+                <HourlyForecastItem
+                  dt={item.dt}
+                  weather={item.weather}
+                  dt_txt={item.dt_txt}
+                  wind={item.wind}
+                  main={item.main}
+                ></HourlyForecastItem>
+              );
+            })}
         </div>
       )}
     </div>

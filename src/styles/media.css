@@ -55,9 +55,7 @@
   .FindLocation {
     width: 700px !important;
   }
-  .Button > button {
-    width: 170px !important;
-  }
+
   button > p {
     font-size: 14px !important;
   }

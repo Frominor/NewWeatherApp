@@ -1,10 +1,12 @@
 import React from "react";
 import CircularProgress from "@mui/material/CircularProgress";
-import "./FiveDForecast.css";
-import { UseAppSelector } from "../../../hooks/typedhooks";
 import { Container } from "@mui/material";
-import { FiveDForecastItem } from "./FiveDForecastItem/FiveDForecastItem";
+
+import FiveDForecastItem from "./FiveDForecastItem/FiveDForecastItem";
+
+import { UseAppSelector } from "../../../hooks/typedhooks";
 import { IWeather } from "../../../types/IWeather";
+import "./FiveDForecast.css";
 const FiveDForecast: React.FC = () => {
   const State = UseAppSelector((State) => State.Weather);
 
@@ -24,6 +26,7 @@ const FiveDForecast: React.FC = () => {
           <CircularProgress sx={{ color: "white" }} />
         </Container>
       ) : (
+        State.FiveDForecast &&
         State.FiveDForecast.map((item: IWeather, key) => {
           return (
             <FiveDForecastItem

@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+
 import axios from "axios";
 import { IWeather, State } from "../types/IWeather";
 import { FilteredWeather } from "../utils/filteredWeather";
@@ -74,11 +75,13 @@ const WeatherSlice = createSlice({
         ) => {
           state.City = action.payload.city.name;
           FilterWeatherForData(action.payload.list, state);
-          state.FiveDForecast = FilteredWeather(state.FiveDForecast);
-          state.HourlyWeather = FilteredWeather(state.HourlyWeather);
+          if (state.FiveDForecast && state.HourlyWeather) {
+            state.FiveDForecast = FilteredWeather(state.FiveDForecast);
+            state.HourlyWeather = FilteredWeather(state.HourlyWeather);
+          }
         }
       )
-      .addCase(GetWeather.rejected, (state, action) => {
+      .addCase(GetWeather.rejected, (state) => {
         state.Error =
           "Произошла ошибка на стороне сервера,попробуйте чуть позже";
         state.isLoading = false;
@@ -101,6 +104,7 @@ const WeatherSlice = createSlice({
           } else {
             state.Lat = action.payload[0].lat;
             state.Lon = action.payload[0].lon;
+            console.log(state.Lat);
           }
           state.Error = null;
         }

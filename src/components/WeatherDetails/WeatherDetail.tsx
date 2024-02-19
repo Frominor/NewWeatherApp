@@ -33,9 +33,17 @@ const WeatherDetails: React.FC = () => {
           <TempAndSunInfo></TempAndSunInfo>
 
           <div className="imgTemperature">
-            <img src={State.FiveDForecast[1]?.weather[0]?.icon}></img>
+            <img
+              src={
+                State.FiveDForecast
+                  ? State.FiveDForecast[1]?.weather[0]?.icon
+                  : ""
+              }
+            ></img>
             <p>
-              {State?.FiveDForecast[0]?.weather[0].description.toUpperCase()}
+              {State.FiveDForecast
+                ? State.FiveDForecast[0]?.weather[0].description.toUpperCase()
+                : ""}
             </p>
           </div>
           <ExtraDetails></ExtraDetails>
