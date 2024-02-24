@@ -1,7 +1,5 @@
 import React from "react";
 
-import Switch from "@mui/material/Switch";
-
 //@ts-ignore
 import { debounce } from "lodash-es";
 import { UseAppDispatch, UseAppSelector } from "../../hooks/typedhooks";
