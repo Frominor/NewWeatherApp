@@ -2,10 +2,13 @@ import React from "react";
 import "./styles/App.css";
 import { Header } from "./components/header/header";
 import { Main } from "./components/main/main";
-import { UseAppSelector } from "./hooks/typedhooks";
+import { useAppSelector } from "./hooks/typedhooks";
 import { ReactComponent as Error } from "./imgs/error-sing-svgrepo-com.svg";
 const App: React.FC = () => {
-  const State = UseAppSelector((State) => State.Weather);
+function id<T>(){
+  
+}
+  const State = useAppSelector((State) => State.Weather);
   return (
     <div className="App">
       {State.Error ? (

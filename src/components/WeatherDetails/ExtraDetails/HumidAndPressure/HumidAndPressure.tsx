@@ -1,10 +1,10 @@
 import React from "react";
 import "./HumidAndPressure.css";
-import { UseAppSelector } from "../../../../hooks/typedhooks";
+import { useAppSelector } from "../../../../hooks/typedhooks";
 import { ReactComponent as Humidity } from "./humidity-svgrepo-com.svg";
 import { ReactComponent as Pressure } from "./pressure-svgrepo-com.svg";
 const HumidAndPressure: React.FC = () => {
-  const State = UseAppSelector((State) => State.Weather);
+  const State = useAppSelector((State) => State.Weather);
   return (
     <div className="HumidAndPressure">
       <div className="Humid">

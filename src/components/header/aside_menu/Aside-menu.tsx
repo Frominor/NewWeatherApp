@@ -1,5 +1,5 @@
 import React from "react";
-import { UseAppSelector } from "../../../hooks/typedhooks";
+import { useAppSelector } from "../../../hooks/typedhooks";
 import { ReactComponent as Menu } from "../menu-svgrepo-com.svg";
 import "./Aside-menu.css";
 export interface AsideProps {
@@ -26,7 +26,7 @@ const Aside_menu: React.FC<AsideProps> = ({
   setPhoneMenuActive,
   PhoneMenuActive,
 }) => {
-  const State = UseAppSelector((State) => State.Weather);
+  const State = useAppSelector((State) => State.Weather);
   const ToggleMenu = (e: React.MouseEvent<SVGSVGElement>) => {
     setPhoneMenuActive(!PhoneMenuActive);
   };

@@ -4,7 +4,6 @@ import sneg from "../imgs/rain 1.png";
 import drizzle from "../imgs/drizzle 1.png";
 import clear from "../imgs/clear 2.png";
 import mist from "../imgs/mist 1.png";
-import sun from "../imgs/sun.png";
 export const FilteredWeather = (Weather: IWeather[]) => {
   for (let k of Weather) {
     switch (k.weather[0].description) {

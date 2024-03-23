@@ -2,7 +2,7 @@ import React from "react";
 
 //@ts-ignore
 import { debounce } from "lodash-es";
-import { UseAppDispatch, UseAppSelector } from "../../hooks/typedhooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/typedhooks";
 import {
   FindCityCoords,
   addWeather,
@@ -18,13 +18,13 @@ import HeaderBox from "./HeaderBox/HeaderBox";
 import "./Header.css";
 import Right_side_menu from "./Right-side-menu/Right-side-menu";
 const Header = () => {
-  const dispatch = UseAppDispatch();
+  const dispatch = useAppDispatch();
   const { theme, setTheme } = useTheme();
   const [Coords, SetCoords] = React.useState<{
     latitude: number;
     longitude: number;
   } | null>(null);
-  const State = UseAppSelector((State) => State.Weather);
+  const State = useAppSelector((State) => State.Weather);
 
   const [City, SetCity] = React.useState("");
   const [Dadat, SetDadat] = React.useState<{ value: string }[]>([]);

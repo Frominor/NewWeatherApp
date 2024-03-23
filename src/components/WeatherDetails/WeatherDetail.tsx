@@ -8,10 +8,10 @@ import sun from "../../imgs/sun.png";
 import "./WeatherDetail.css";
 import { ExtraDetails } from "./ExtraDetails/ExtraDetails";
 import { TempAndSunInfo } from "./TempAndSun/TempAndSunInfo";
-import { UseAppSelector } from "../../hooks/typedhooks";
+import { useAppSelector } from "../../hooks/typedhooks";
 import { Container, CircularProgress } from "@mui/material";
 const WeatherDetails: React.FC = () => {
-  const State = UseAppSelector((State) => State.Weather);
+  const State = useAppSelector((State) => State.Weather);
   return (
     <div className="WeatherDetails">
       {State.isLoading ? (

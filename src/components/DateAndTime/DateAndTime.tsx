@@ -1,6 +1,6 @@
 import React from "react";
 import "./DateAndTime.css";
-import { UseAppSelector } from "../../hooks/typedhooks";
+import { useAppSelector } from "../../hooks/typedhooks";
 
 const WeekDays = [
   "Sunday",
@@ -27,7 +27,8 @@ const Month = [
 ];
 
 const DateAndTime: React.FC = () => {
-  const State = UseAppSelector((State) => State.Weather);
+  Intl.DateTimeFormat();
+  const State = useAppSelector((State) => State.Weather);
   const [Data, SetDate] = React.useState<string | number>();
   React.useEffect(() => {
     const timer = setInterval(

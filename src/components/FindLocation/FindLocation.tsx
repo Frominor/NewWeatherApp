@@ -3,7 +3,7 @@ import React from "react";
 import CustomInput from "../FindInput/CustomInput";
 import Button from "../button/Button";
 
-import { UseAppSelector } from "../../hooks/typedhooks";
+import { useAppSelector } from "../../hooks/typedhooks";
 import { FindLocationProps } from "../../types/IFindLocationProps";
 
 const FindLocation: React.FC<FindLocationProps> = ({
@@ -18,7 +18,7 @@ const FindLocation: React.FC<FindLocationProps> = ({
   Dadat,
   SetDadat,
 }) => {
-  const State = UseAppSelector((State) => State.Weather);
+  const State = useAppSelector((State) => State.Weather);
   return (
     <div className="FindLocation">
       <CustomInput

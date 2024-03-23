@@ -1,11 +1,11 @@
 import React from "react";
 import Uv from "../../../../imgs/uv-white 1.png";
 import "./WindAndUv.css";
-import { UseAppSelector } from "../../../../hooks/typedhooks";
+import { useAppSelector } from "../../../../hooks/typedhooks";
 import { ReactComponent as Wind } from "./wind-svgrepo-com.svg";
 import { ReactComponent as UV } from "./uv-index-alt-svgrepo-com.svg";
 const WindAndUv: React.FC = () => {
-  const State = UseAppSelector((State) => State.Weather);
+  const State = useAppSelector((State) => State.Weather);
   return (
     <div className="WindAndUv">
       <div className="Humid">

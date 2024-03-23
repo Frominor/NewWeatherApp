@@ -4,11 +4,11 @@ import { Container } from "@mui/material";
 
 import FiveDForecastItem from "./FiveDForecastItem/FiveDForecastItem";
 
-import { UseAppSelector } from "../../../hooks/typedhooks";
+import { useAppSelector } from "../../../hooks/typedhooks";
 import { IWeather } from "../../../types/IWeather";
 import "./FiveDForecast.css";
 const FiveDForecast: React.FC = () => {
-  const State = UseAppSelector((State) => State.Weather);
+  const State = useAppSelector((State) => State.Weather);
 
   return (
     <div className="FiveDForecast">

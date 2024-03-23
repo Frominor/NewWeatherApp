@@ -1,6 +1,6 @@
 import React from "react";
 
-import { UseAppSelector } from "../../../hooks/typedhooks";
+import { useAppSelector } from "../../../hooks/typedhooks";
 import HourlyForecastItem from "./HourlyForecastItem/HourlyForecastItem";
 import { IWeather } from "../../../types/IWeather";
 
@@ -8,7 +8,7 @@ import { CircularProgress, Container } from "@mui/material";
 
 import "./HourlyForecast.css";
 const HourlyForecast = () => {
-  const State = UseAppSelector((State) => State.Weather);
+  const State = useAppSelector((State) => State.Weather);
   return (
     <div className="HourlyForecast">
       <p className="HourlyForTitle">Hourly Forecast:</p>
