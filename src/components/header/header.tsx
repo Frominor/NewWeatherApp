@@ -60,7 +60,7 @@ const Header = () => {
     if (isFectingDadatas) {
       axios
         .post(
-          "http://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
+          "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address",
           { query: City },
           {
             headers: {
