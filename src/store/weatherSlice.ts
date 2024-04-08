@@ -59,7 +59,7 @@ const WeatherSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(GetWeather.pending, (state) => {
+      .addCase(GetWeather.pending, (state: State) => {
         state.isLoading = true;
       })
       .addCase(
@@ -81,7 +81,7 @@ const WeatherSlice = createSlice({
           }
         }
       )
-      .addCase(GetWeather.rejected, (state) => {
+      .addCase(GetWeather.rejected, (state: State) => {
         state.Error =
           "Произошла ошибка на стороне сервера,попробуйте чуть позже";
         state.isLoading = false;
@@ -92,10 +92,10 @@ const WeatherSlice = createSlice({
           state,
           action: PayloadAction<
             {
-              country: String;
+              country: string;
               lat: number;
               lon: number;
-              name: String;
+              name: string;
             }[]
           >
         ) => {

@@ -35,7 +35,7 @@ const FindLocation: React.FC<FindLocationProps> = ({
             SetCity("");
           }
         }}
-        clasS="Find"
+        clasS="FindCity"
         title="Find"
       ></Button>
 
