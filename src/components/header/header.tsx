@@ -66,7 +66,8 @@ const Header = () => {
             headers: {
               "Content-Type": "application/json",
               Accept: "application/json",
-              Authorization: "Token " + process.env.React_APP_API_DADATA_KEY,
+              Authorization:
+                "Token " + "9bb4c3d9813c58b549e987f90889d79cb187a790",
             },
           }
         )

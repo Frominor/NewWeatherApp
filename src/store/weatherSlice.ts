@@ -10,12 +10,12 @@ export const GetWeather = createAsyncThunk<
 >("weather/fetchWeather", async (Parametr) => {
   if (Parametr.isCurrent) {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${Parametr.State.CurrentWeather.lat}&lon=${Parametr.State.CurrentWeather.lon}&appid=${process.env.REACT_APP_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${Parametr.State.CurrentWeather.lat}&lon=${Parametr.State.CurrentWeather.lon}&appid=9e2676b5d5179f93b75b68b95d3b7bf3`
     );
     return response.data;
   } else {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${Parametr.State.Lat}&lon=${Parametr.State.Lon}&appid=${process.env.REACT_APP_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${Parametr.State.Lat}&lon=${Parametr.State.Lon}&appid=9e2676b5d5179f93b75b68b95d3b7bf3`
     );
     return response.data;
   }
@@ -24,7 +24,7 @@ export const FindCityCoords = createAsyncThunk(
   "weather/fetchByCityName",
   async (CityName: String) => {
     const response = await axios.get(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${CityName}&limit=5&appid=${process.env.REACT_APP_API_KEY}`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${CityName}&limit=5&appid=9e2676b5d5179f93b75b68b95d3b7bf3`
     );
     return response.data;
   }
